@@ -1,0 +1,1060 @@
+<link rel="stylesheet" href="/stylesheets/tags/pet_tag.css">
+{{!-- <link rel="stylesheet" href="/stylesheets/petMap/pet_tag.css">
+<link rel="stylesheet" href="/stylesheets/petMap/singleSlider.css">
+<link rel="stylesheet" href="/stylesheets/petMap/flickity.css"> --}}
+{{!-- <link rel="stylesheet" href="/stylesheets/petMap/index/carousel/flickity/flickity.min.css"> --}}
+<link rel="stylesheet" href="/stylesheets/virtualClass/virtualclass.css">
+<link rel="stylesheet" href="/stylesheets/singleSlider2.css">
+
+{{!-- <script src="/javascripts/map2.js"></script> --}}
+<script src="js/virtualclass/map2.js"></script>
+
+{{!-- <script src="js/virtualclass/virtualclass.js"></script> --}}
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link href="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.css" rel="stylesheet">
+<link href="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.css" rel="stylesheet">
+<script type="text/javascript"
+    src="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.min.js"></script>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<link rel="stylesheet" href="/stylesheets/virtualClass/mobiscroll.javascript.min.css">
+<script src="js/virtualclass/mobiscroll.javascript.min.js"></script>
+
+<style>
+    .tagBtn {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .tags {
+        background-color: #fff !important;
+        color: #d81b60 !important;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 0.7rem !important;
+        font-size: 1.3rem;
+        font-weight: 600 !important;
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .PPmain {
+        border-radius: 15px;
+        box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .enquireBtn {
+        background-color: #d80b68;
+        padding: 0.5rem 2rem;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .duration,
+    .danceSlot {
+        border-radius: 15px;
+        padding: 0.2rem 0.7rem;
+        margin: 0.2rem 0.3rem;
+        border: 1px solid #4dd0e1;
+        color: #fff;
+        background-color: #4dd0e1;
+        font-weight: 600;
+        display: inline-block;
+        cursor: pointer;
+    }
+</style>
+
+
+<div class="container-fluid" style="padding: 0 4rem 0 4rem">
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <div class="carousel carousel-main carouselBottom" style="background: #ffffff;" data-flickity>
+                <img class="carousel-cell ch" src="/images/index/carousel/1.png">
+                <img class="carousel-cell ch" src="/images/index/carousel/2.png">
+                <img class="carousel-cell ch" src="/images/index/carousel/3.png">
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;">
+                    <img class="carousel-cell ch" src="../../public//images/index/carousel/1.png">
+                </div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+                <div class="carousel-cell ch" style="width: 250px; margin-right: 250px;"></div>
+
+            </div>
+
+            <div class="carousel carousel-nav"
+                data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div>
+
+
+                <div class="tagBtn my-4">
+                    <a class="tags">Virtual Class</a>
+                </div>
+
+
+                <br>
+
+
+
+                <div>
+                    <ul class="nav nav-pills mb-3 justify-content-center nav-fill" id="pills-tab topdiv" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#schedule"
+                                role="tab" aria-controls="pills-home" aria-selected="true">Membership</a>
+                        </li>
+
+                    </ul>
+                    <hr>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="schedule" role="tabpanel"
+                            aria-labelledby="pills-home-tab">
+
+                            <h4>
+                                <b>Pricing and Packages</b>
+                            </h4>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="col-lg-12 col-11 col-md-10 my-3 PPmain coworkingMain">
+                                    <div class="container-fluid px-0">
+                                        <div class="row collapseTrigger uncollapsed pt-3 pb-2 py-md-4 px-2">
+                                            <div class="col-12 col-md-3 d-flex align-items-center packageTitle">
+                                                {{space.priceStructure.pet.[0].petType}}</div>
+                                            <div
+                                                class="col-12 col-md-6 d-flex align-items-center justify-content-start justify-content-md-center">
+                                                Starting from {{space.priceStructure.pet.[0].price}} /
+                                                {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</div>
+                                            <div
+                                                class="col-12 col-md-3 d-flex align-items-center justify-content-end collapseIcon uncollapsed">
+                                                <i class="fas fa-chevron-up"></i></div>
+                                        </div>
+                                        <div class="container-fluid collapseTarget">
+                                            <hr class="mt-0">
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 px-2 packageImg">
+
+                                                    <div class="carousel" style="background: #EEE;
+  width: 180px; height:160px" data-flickity>
+                                                        <div style="width: 100%;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-12 col-md-8 py-0 d-flex align-items-center">
+                                                    <div class="container-fluid px-0 py-3 px-md-3 py-md-2">
+                                                        <div class="row">
+                                                            <div class="col-12 py-1">
+                                                                <h5>{{space.priceStructure.pet.[0].title}}</h5>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <h6>Description</h6>
+                                                                <p>{{space.priceStructure.pet.[0].description}}</p>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <label for="seatCapacity">Choose seat capacity:</label>
+                                                                <select name="seatCapacity" id="seatCapacity">
+                                                                    <option value="20">
+                                                                        {{space.priceStructure.pet.[0].seatCapacity}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <span>Select duration: </span>
+                                                                <div class="duration">
+                                                                    {{space.priceStructure.pet.[0].price}} /
+                                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                                </div>
+                                                                <div class="duration">
+                                                                    {{space.priceStructure.pet.[0].price}} /
+                                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex align-items-center justify-content-between pb-3">
+                                                <button class="enquireBtn ml-3">Enquire</button>
+                                                <span class="price mr-3">₹<span
+                                                        class="">{{space.priceStructure.pet.[0].price}}</span> /
+                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-lg-12 col-11 col-md-10 my-3 PPmain coworkingMain">
+                                    <div class="container-fluid px-0">
+                                        <div class="row collapseTrigger uncollapsed pt-3 pb-2 py-md-4 px-2">
+                                            <div class="col-12 col-md-3 d-flex align-items-center packageTitle">
+                                                {{space.priceStructure.pet.[0].petType}}</div>
+                                            <div
+                                                class="col-12 col-md-6 d-flex align-items-center justify-content-start justify-content-md-center">
+                                                Starting from {{space.priceStructure.pet.[0].price}} /
+                                                {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</div>
+                                            <div
+                                                class="col-12 col-md-3 d-flex align-items-center justify-content-end collapseIcon uncollapsed">
+                                                <i class="fas fa-chevron-up"></i></div>
+                                        </div>
+                                        <div class="container-fluid collapseTarget">
+                                            <hr class="mt-0">
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 px-2 packageImg">
+
+                                                    <div class="carousel" style="background: #EEE;
+  width: 180px; height:160px" data-flickity>
+                                                        <div style="width: 100%;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-12 col-md-8 py-0 d-flex align-items-center">
+                                                    <div class="container-fluid px-0 py-3 px-md-3 py-md-2">
+                                                        <div class="row">
+                                                            <div class="col-12 py-1">
+                                                                <h5>{{space.priceStructure.pet.[0].title}}</h5>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <h6>Description</h6>
+                                                                <p>{{space.priceStructure.pet.[0].description}}</p>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <label for="seatCapacity">Choose seat capacity:</label>
+                                                                <select name="seatCapacity" id="seatCapacity">
+                                                                    <option value="20">
+                                                                        {{space.priceStructure.pet.[0].seatCapacity}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <span>Select duration: </span>
+                                                                <div class="duration">
+                                                                    {{space.priceStructure.pet.[0].price}} /
+                                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                                </div>
+                                                                <div class="duration">
+                                                                    {{space.priceStructure.pet.[0].price}} /
+                                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex align-items-center justify-content-between pb-3">
+                                                <button class="enquireBtn ml-3">Enquire</button>
+                                                <span class="price mr-3">₹<span
+                                                        class="">{{space.priceStructure.pet.[0].price}}</span> /
+                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12 col-11 col-md-10 my-3 PPmain coworkingMain">
+                                    <div class="container-fluid px-0">
+                                        <div class="row collapseTrigger uncollapsed pt-3 pb-2 py-md-4 px-2">
+                                            <div class="col-12 col-md-3 d-flex align-items-center packageTitle">
+                                                {{space.priceStructure.pet.[0].petType}}</div>
+                                            <div
+                                                class="col-12 col-md-6 d-flex align-items-center justify-content-start justify-content-md-center">
+                                                Starting from {{space.priceStructure.pet.[0].price}} /
+                                                {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</div>
+                                            <div
+                                                class="col-12 col-md-3 d-flex align-items-center justify-content-end collapseIcon uncollapsed">
+                                                <i class="fas fa-chevron-up"></i></div>
+                                        </div>
+                                        <div class="container-fluid collapseTarget">
+                                            <hr class="mt-0">
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 px-2 packageImg">
+
+                                                    <div class="carousel" style="background: #EEE;
+  width: 180px; height:160px" data-flickity>
+                                                        <div style="width: 100%;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                        <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-12 col-md-8 py-0 d-flex align-items-center">
+                                                    <div class="container-fluid px-0 py-3 px-md-3 py-md-2">
+                                                        <div class="row">
+                                                            <div class="col-12 py-1">
+                                                                <h5>{{space.priceStructure.pet.[0].title}}</h5>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <h6>Description</h6>
+                                                                <p>{{space.priceStructure.pet.[0].description}}</p>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <label for="seatCapacity">Choose seat capacity:</label>
+                                                                <select name="seatCapacity" id="seatCapacity">
+                                                                    <option value="20">
+                                                                        {{space.priceStructure.pet.[0].seatCapacity}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-12 py-1">
+                                                                <span>Select duration: </span>
+                                                                <div class="duration">
+                                                                    {{space.priceStructure.pet.[0].price}} /
+                                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                                </div>
+                                                                <div class="duration">
+                                                                    {{space.priceStructure.pet.[0].price}} /
+                                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex align-items-center justify-content-between pb-3">
+                                                <button class="enquireBtn ml-3">Enquire</button>
+                                                <span class="price mr-3">₹<span
+                                                        class="">{{space.priceStructure.pet.[0].price}}</span> /
+                                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <hr>
+                        </div>
+                        <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+
+                            {{!-- <div id="schedulediv"> --}}
+                            {{!-- <ul class="nav nav-pills mb-3 justify-content-center nav-fill" id="pills-tab topdiv" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#schedule"
+                                role="tab" aria-controls="pills-home" aria-selected="true">Schedule</a>
+                        </li>
+                    </ul> --}}
+                            <hr>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="schedule" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <div style="height:100%">
+                                        {{!-- <div mbsc-form>
+                                    <div class="mbsc-form-group">
+                                        <div class="mbsc-form-group-title"> One week view</div>
+                                        <div id="demo-one-week" />
+                                    </div>
+                                </div> --}}
+                                        <div class="mbsc-form-group">
+                                            <div class="mbsc-form-group-title"> One week view</div>
+                                            <div id="demo-one-week" />
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <input type="text" class="js-range-slider" name="my_range" value="" />
+                                    </div>
+                                    <hr>
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                            aria-labelledby="pills-home-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false">5:00 pm </button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 6:00 pm</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 10:00 pm</button>
+
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                            aria-labelledby="pills-profile-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 10:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 5:00 pm</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 7:00 pm</button>
+                                        </div>
+                                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 5:00 pm</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 8:00 pm</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 9:00 pm</button>
+                                        </div>
+                                        <div class="tab-pane fade" id="thursday" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 10:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 11:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 7:00 pm</button>
+                                        </div>
+                                        <div class="tab-pane fade" id="friday" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 10:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 2:00 pm</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 6:00 pm</button>
+                                        </div>
+                                        <div class="tab-pane fade" id="Saturday" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 9:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 1:00 pm</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 8:00 pm</button>
+                                        </div>
+                                        <div class="tab-pane fade" id="sunday" role="tabpanel"
+                                            aria-labelledby="pills-contact-tab">
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 8:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 10:00 am</button>
+                                            <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                                aria-pressed="false"> 3:00 pm</button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div style="text-align: end;">
+                                        <button type="button" class="btn btn-primary justify-content-end"
+                                            data-toggle="button" aria-pressed="false" id="booknowbtn"> Book Now</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{!-- <div id="schedulediv">
+                    <ul class="nav nav-pills mb-3 justify-content-center nav-fill" id="pills-tab topdiv" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#schedule"
+                                role="tab" aria-controls="pills-home" aria-selected="true">Schedule</a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="schedule" role="tabpanel"
+                            aria-labelledby="pills-home-tab">
+                            <div style="height:100%">
+                                <div class="mbsc-form-group">
+                                    <div class="mbsc-form-group-title"> One week view</div>
+                                    <div id="demo-one-week" />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <input type="text" class="js-range-slider" name="my_range" value="" />
+                            </div>
+                            <hr>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                    aria-labelledby="pills-home-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false">5:00 pm </button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 6:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 10:00 pm</button>
+
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                    aria-labelledby="pills-profile-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 5:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 7:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 5:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 8:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 9:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="thursday" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 11:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 7:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="friday" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 2:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 6:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="Saturday" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 9:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 1:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 8:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="sunday" role="tabpanel"
+                                    aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 8:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button"
+                                        aria-pressed="false"> 3:00 pm</button>
+                                </div>
+                            </div>
+                            <hr>
+                            <div style="text-align: end;">
+                                <button type="button" class="btn btn-primary justify-content-end" data-toggle="button"
+                                    aria-pressed="false" id="booknowbtn"> Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> --}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br>
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <h2>Description</h2>
+        <p class="subText">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam praesentium
+            necessitatibus commodi ab vitae id suscipit doloribus
+            {{space.description}} </p>
+    </div>
+    <div class="col-lg-6 justify-content-end">
+        <div class="d-flex justify-content-center">
+            <img src="/images/map/pet.svg" alt="" srcset="" id="illustration">
+        </div>
+
+    </div>
+
+    {{!-- <div class="col-lg-2"></div> --}}
+
+</div><br>
+<div class="row">
+    <div class="col-lg-6 col-12">
+        <h2>How it Works</h2>
+        <ul>
+            <p class="subText">
+                <i class="fas fa-shopping-cart" style="color:#d81b60"></i> &nbsp; link will be provided on booking<br>
+                <i class="fas fa-video" style="color:#d81b60"></i>&nbsp; Join via the link<br>
+                <i class="fas fa-users" style="color:#d81b60"></i>&nbsp; Enjoy
+            </p>
+        </ul>
+    </div>
+
+    <div class="col-lg-6 col-12">
+        <h2>Rules And Policies</h2>
+        <p class="subText">CoVid Sanitization Guidelines need to be followed<br>
+            Payment Needs to be done upfront<br>
+            No Refund Post Payment, with the exception of certain cases</p>
+    </div>
+</div><br>
+<div class="row" style="margin-bottom: 2rem;">
+    <div class="col-lg-6 col-12">
+        <h2>Amenities</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="subText">
+                    <li>AC Glass Rooms</li>
+                    <li>3500 sqft. indoor play area</li>
+                    <li>25ft Long swimming pool </li>
+                </ul>
+            </div>
+            <div class="col-lg-6 gap-fill">
+                <ul class="subText">
+                    <li>dog park</li>
+                    <li>24x7 Pet Cam access </li>
+                    <li>pick and drop service </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="modal1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="/images/index/map/hola2.png" alt="" srcset="" id="modalimg">
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="modal2">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="/images/index/home.png" alt="" srcset="" id="modalimg">
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="modal3">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="/images/index/screenshot.png" alt="" srcset="" id="modalimg">
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="modal4">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="/images/index/map/hola2.png" alt="" srcset="" id="modalimg">
+        </div>
+    </div>
+</div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" id="modal5">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <img src="/images/index/map/hola2.png" alt="" srcset="" id="modalimg">
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<!-- <link rel="stylesheet" href="/stylesheets/tags/pet_tag.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link href="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.css" rel="stylesheet">
+<link href="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.css" rel="stylesheet">
+<script type="text/javascript" src="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.min.js"></script>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <div class="carousel carousel-main" data-flickity>
+                <div class="carousel-cell" data-toggle="modal" data-target="#modal1"></div>
+                <div class="carousel-cell" data-toggle="modal" data-target="#modal2"></div>
+                <div class="carousel-cell" data-toggle="modal" data-target="#modal3"></div>
+                <div class="carousel-cell" data-toggle="modal" data-target="#modal4"></div>
+                <div class="carousel-cell" data-toggle="modal" data-target="#modal5"></div>
+            </div>
+
+            <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+                <div class="carousel-cell"></div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div>
+                <h2> Pet Tag
+                    {{space.title}}
+                </h2>
+                <div>
+                    <i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam temporibus illo a
+                    {{space.address.streetDetails}}
+                </div>
+            </div><br>
+            <div id="schedulediv">
+                <ul class="nav nav-pills mb-3 justify-content-center nav-fill" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#schedule" role="tab" aria-controls="pills-home" aria-selected="true">Schedule</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#booking" role="tab" aria-controls="pills-profile" aria-selected="false">Booking</a>
+                    </li>
+                </ul><hr>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="schedule" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist" >
+                            <li class="nav-item">
+                                <a class="nav-link active days" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Mon</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link days" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Tue</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link days" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Wed</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link days" id="pills-contact-tab" data-toggle="pill" href="#thursday" role="tab" aria-controls="pills-contact" aria-selected="false">Thurs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link days" id="pills-contact-tab" data-toggle="pill" href="#friday" role="tab" aria-controls="pills-contact" aria-selected="false">Fri</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link days" id="pills-contact-tab" data-toggle="pill" href="#Saturday" role="tab" aria-controls="pills-contact" aria-selected="false">Sat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link days" id="pills-contact-tab" data-toggle="pill" href="#sunday" role="tab" aria-controls="pills-contact" aria-selected="false">Sun</a>
+                            </li>
+                            </ul><hr>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false">5:00 pm </button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 6:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 10:00 pm</button>
+                   
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 5:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 7:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 5:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 8:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 9:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="thursday" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 11:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 7:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="friday" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 2:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 6:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="Saturday" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 9:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 1:00 pm</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 8:00 pm</button>
+                                </div>
+                                <div class="tab-pane fade" id="sunday" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 8:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false">  10:00 am</button>
+                                    <button type="button" class="btn btn-outline-secondary" data-toggle="button" aria-pressed="false"> 3:00 pm</button>
+                                </div>                                                            
+                            </div>  
+                            <hr> 
+                            <div style="text-align: end;">
+                                <button type="button" class="btn btn-primary justify-content-end" data-toggle="button" aria-pressed="false" id="booknowbtn"> Book Now</button>
+                            </div> 
+                    </div>
+                    <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="pills-profile-tab">    
+                        <form action="/user/book" method="post">
+                            <div class="input-group" style="margin-top:10px">
+
+                                {{#if_eq domain 'coliving'}}
+                                <input id="input-id" autofill="no" autocomplete="off" name="datetimes" class="form-control" type="text" placeholder="Check In - Check Out" value="" title="Check In - Check Out" style="max-width:65%">
+                                {{/if_eq}}
+                                {{#if_eq domain 'coworking'}}
+                                <input id="input-id" autofill="no" name="datetimes" class="form-control" type="text" placeholder="Check In-Check Out" value="" title="Check In - Check Out" style="max-width:65%">
+                                {{/if_eq}}
+                                {{#if_eq domain 'dance'}}
+                                <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+                                {{/if_eq}}
+                                {{#if_eq domain 'gym'}}
+                                <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+                                {{/if_eq}}
+                                <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+                                <input type="text" min="1" max="10" placeholder="No. of People" class="form-control" id="second-input" style="max-width:35%">
+                            </div>
+                            <br>
+                                    <input type="text" placeholder="No of rooms" class="form-control" id="down-input"><br>
+                                    
+                            <b class="marginLeft">Slots available:</b><br>
+                            <div class="button-group-pills text-center" data-toggle="buttons" id="slots" style="display: none;">
+
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-lg-8 col-6">
+                                <span><b style="font-size:20px;" class="marginLeft">Total Price: {{space.priceStructure.hourly}}</b></span>
+                                <span style="font-size:14px;">(Inclusive of all taxes)</span>
+                                </div>
+                                <div class="col-lg-4 col-6">
+                                <span style="font-size:20px;color:#d81b60">
+                                    <b>₹ <span id="totalPrice">0</span></b>
+                                </span>
+                                </div>
+                            </div>
+                            <label for="publicID">
+                                <input type="text" value="{{space.publicID}}" name="spacePublicID" id="publicID" style="display: none">
+                            </label>
+                            {{#if login}}
+                                <button type="submit" class="btn btn-primary btn-rounded" disabled id="book-form">Book Now</button><br>
+                            {{else}}
+                                <h6>Please <a href="/user/signin" style="color:#d81b60; text-decoration: underline !important;">Login</a> to Book A Slot</h6>
+                            {{/if}}
+                            <h6>Booking will be available soon. Stay tuned!</h6>
+                            </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <h2>Description</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam praesentium necessitatibus commodi ab vitae id suscipit doloribus
+                {{space.description}} </p>
+        </div>
+        <div class="col-lg-6 justify-content-end">
+            <img src="/images/tags/pet.svg" alt="" srcset="" id="illustration" >
+        </div>        
+
+        {{!-- <div class="col-lg-2"></div> --}}
+
+    </div><br>
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <h2>How it Works</h2>
+            <ul>
+                <i class="fas fa-shopping-cart" style="color:#d81b60"></i> &nbsp; link will be provided on booking<br>
+                <i class="fas fa-video" style="color:#d81b60"></i>&nbsp;  Join via the link<br>
+                <i class="fas fa-users" style="color:#d81b60"></i>&nbsp;  Enjoy 
+            </ul>
+        </div>
+
+        <div class="col-lg-6 col-12">
+            <h2>Rules And Policies</h2>
+                        CoVid Sanitization Guidelines need to be followed<br>
+                        Payment Needs to be done upfront<br>
+                        No Refund Post Payment, with the exception of certain cases 
+        </div>       
+    </div><br>
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <h2>Amenities</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul>
+                        <li>AC Glass Rooms</li>
+                        <li>3500 sqft. indoor play area</li>
+                        <li>25ft Long swimming pool </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul>
+                        <li>dog park</li>
+                        <li>24x7 Pet Cam access </li>
+                        <li>pick and drop service </li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="/images/index/map/hola2.png" alt="" srcset="" id="modalimg">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal2">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="/images/index/home.png" alt="" srcset="" id="modalimg">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal3">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="/images/index/screenshot.png" alt="" srcset="" id="modalimg">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal4">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="/images/index/map/hola2.png" alt="" srcset="" id="modalimg">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modal5">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <img src="/images/index/map/hola2.png" alt="" srcset="" id="modalimg">
+            </div>
+        </div>
+    </div>
+
+</div>
+ -->
+
+
+<script>
+
+    // Use the settings object to change the theme
+    mobiscroll.settings = {
+        lang: 'en',            // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'ios',          // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light'  // More info about themeVariant: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-themeVariant
+    };
+
+    mobiscroll.calendar('#demo-one-week', {
+        display: 'inline',     // Specify display mode like: display: 'bottom' or omit setting to use default
+        weeks: 1,              // More info about weeks: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-weeks
+    });
+
+    mobiscroll.calendar('#demo-two-week', {
+        display: 'inline',     // Specify display mode like: display: 'bottom' or omit setting to use default
+        weeks: 2               // More info about weeks: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-weeks
+    });
+
+    mobiscroll.calendar('#demo-three-week', {
+        display: 'inline',     // Specify display mode like: display: 'bottom' or omit setting to use default
+        weeks: 3               // More info about weeks: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-weeks
+    });
+</script>

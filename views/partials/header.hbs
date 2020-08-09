@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/stylesheets/header.css">
+<script type="text/javascript"
+        src="https://cdn.rawgit.com/prashantchaudhary/ddslick/master/jquery.ddslick.min.js"></script>
+
+<script src="/index/js/header3.js"></script>
+
+<nav class="navbar navbar-expand-lg navbar-light"
+     style="z-index: 1; padding: .5rem 0; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25); margin-bottom:20px;">
+
+    <a class="navbar-brand col-xs-3" style=" display:flex; justify-content:left" href="/">
+        <img src="/index/images/logo.png" style="height:60px;width:60px">
+        <b class="mt-auto mb-auto">Sigma Tenant</b>
+    </a>
+
+<!--    {{#if login}}-->
+<!--        <div class="col-xs-2 signin1">-->
+<!--            <a class="nav-link" href="/user/logout" style="color:black"> Log Out</a>-->
+<!--        </div>-->
+<!--        {{#if vendorFlag}}-->
+<!--            <div class="col-xs-2 signin1">-->
+<!--                <a class="nav-link" href="/dashboard" style="color:black"> Dashboard <i class="fa fa-user-circle"></i></a>-->
+<!--            </div>-->
+<!--        {{else}}-->
+<!--            <div class="col-xs-2 signin1">-->
+<!--                <a class="nav-link" href="/user/profile" style="color:black"> Profile <i class="fa fa-user-circle"></i></a>-->
+<!--            </div>-->
+<!--        {{/if}}-->
+<!--    {{else}}-->
+<!--        <div class="col-xs-2 signin1">-->
+<!--            <a class="nav-link" href="/user/signin" style="color:black"> Sign In <i class="fa fa-user-circle"></i></a>-->
+<!--        </div>-->
+<!--    {{/if}}-->
+    <div class="col-lg-6" id="city-space-event"
+         style="display:flex; justify-content:center; flex-direction:row; padding:0;">
+        <div class="container mx-auto">
+            <form action="/search" method="post" onsubmit="return validateForm()">
+                <div class="row" id="selectDiv" style=" margin-right:0;">
+                    <div id="cityWrapper" hidden></div>
+                    <select id="cityDropDown">
+                        <option value="0" selected="selected">City</option>
+                        <option value="1">Bengaluru</option>
+                    </select>
+                    <div id="spaceWrapper" hidden></div>
+                    <select id="spaceDomain">
+                        <option value="0" selected="selected">Space</option>
+                        <option value="1">Dance</option>
+                    </select>
+                    <button class="btn btn-outline-secondary btn-primary" type="submit"
+                            id="search-btn">Search</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+<!--    {{#if login}}-->
+<!--        <div class="col-lg-1 signin d-flex p-0 align-items-end">-->
+<!--            <a class="nav-link ml-auto" href="/user/logout" style="color:black"> Log Out</a>-->
+<!--        </div>-->
+<!--        {{#if vendorFlag}}-->
+<!--            <div class="col-lg-2 signin">-->
+<!--                <a class="nav-link" href="/dashboard" style="color:black"> Dashboard <i class="fa fa-user-circle"></i></a>-->
+<!--            </div>-->
+<!--        {{else}}-->
+<!--            <div class="col-lg-2 signin d-flex p-0">-->
+<!--                <a class="nav-link mr-auto" href="/user/profile" style="color:black"> Profile <i class="fa fa-user-circle"></i></a>-->
+<!--            </div>-->
+<!--        {{/if}}-->
+<!--    {{else}}-->
+<!--        <div class="col-lg-2 signin">-->
+<!--            <a class="nav-link" href="/user/signin" style="color:black"> Sign In <i class="fa fa-user-circle"></i></a>-->
+<!--        </div>-->
+<!--    {{/if}}-->
+</nav>

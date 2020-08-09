@@ -1,0 +1,186 @@
+<link rel="stylesheet" href="stylesheets/comp.css">
+<link rel="stylesheet" href="stylesheets/singleslider2.css">
+<script src="js/comp.js"></script>
+
+<div class="row">
+<div class="col-lg-12" style=" margin-bottom:3rem;">
+<div class="card schedule-booking">
+  <h5 class="card-header" style="background-color: #d81b60; "> 
+   <a href="#schedule"><button class="btn" style="color:#fff; font-size:2rem;" class="schedule">Schedule</button></a>  
+  <a href="#booking"><button class="btn" style="color:#fff ;font-size:2rem;" class="booking">Bookings</button></a>
+  
+     </h5>
+  <div class="card-body">
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner car-height">
+    <div class="carousel-item active" id="schedule">
+      <div class="row">
+        <div class="col-lg-1 col-md-1 col-1">
+  <h5  style="background-color:#fff; display:flex; justify-content:start;" >
+   
+   
+           <a href="#">
+       <div class="tagBtn my-2 button dance" style="display: inline-block;">
+         <a class = "tags btr">Freestyle</a>
+          </div>
+           </a>
+             <a href="#">
+       <div class="tagBtn my-2 button dance" style="display: inline-block;">
+         <a class = "tags btr">Urban</a>
+          </div>
+           </a>
+       
+           <a href="#">
+       <div class="tagBtn my-2 button dance" style="display: inline-block;">
+         <a class = "tags btr">Yoga</a>
+          </div>
+           </a>
+           </h5>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-12">
+            <h5><b >Time</b></h5>
+      <input type="text" class="js-range-slider" name="my_range" value="" />
+        </div>
+
+      
+    <div class="col-lg-12 col-md-12 col-12">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12">
+        <h5 > <b>Date</b></h5>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+            <div class="col d-flex justify-content-center align-items-center flex-column calenderDay">
+              <span class="calenderDayOfWeeek">Mon</span><span class="calenderDate">17th</span></div>
+          </div>
+          <div class="row">
+            <div class="col calenderDisplay">today</div>
+            <div class="col calenderDisplay">tomorrow</div>
+            <div class="col calenderDisplay">day after tomorrow</div>
+            <div class="col calenderDisplay">3 days from today</div>
+            <div class="col calenderDisplay">4 days from today</div>
+            <div class="col calenderDisplay">5 days from today</div>
+            <div class="col calenderDisplay">6 days from today</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+</div><br><br>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-12">
+
+   <div class="card-body" style="margin-top: -3rem !important;">
+         
+    <h5> <b> <p class="card-text">Available Sessions :</p> </b></h5>  
+
+          </div>
+  </div>
+  <div class="col-lg-12 col-md-12">
+<a href="#">
+       <div class="tagBtn button dance" style="display: inline-block;">
+         <a class = "tags my-1 btr">5:00 pm</a>
+          </div>
+           </a>
+           <a href="#">
+       <div class="tagBtn button dance" style="display: inline-block;">
+         <a class = "tags my-1 btr">6:00 pm</a>
+          </div>
+           </a>
+
+<a href="#">
+       <div class="tagBtn  button dance" style="display: inline-block;">
+         <a class = "tags my-1 btr">7:00 pm</a>
+          </div>
+           </a>
+<a href="#">
+       <div class="tagBtn  button dance" style="display: inline-block;">
+         <a class = "tags my-1 btr">1:00 pm</a>
+          </div>
+           </a>
+           <a href="#">
+       <div class="tagBtn  button dance" style="display: inline-block;">
+         <a class = "tags my-1 btr">2:00 pm</a>
+          </div>
+           </a>
+
+  </div>
+
+</div>
+    </div>
+    <div class="carousel-item" id="booking" >  
+      <div style="width: 100%;">
+
+          <div class="col-lg-3 col-12" id="map-form">
+    <span style="font-size:20px;"><b class="marginLeft">Hourly Around &nbsp</b></span>
+    <b class="marginLeft"> <span style="color:#d81b60;font-size:25px"> ₹ 1200 {{space.priceStructure.hourly}}</span></b>
+    <form action="/user/book" method="post">
+
+      <div class="input-group" style="margin-top:10px">
+
+        {{#if_eq domain 'coliving'}}
+          <input id="input-id" autofill="no" autocomplete="off" name="datetimes" class="form-control" type="text" placeholder="Check In - Check Out" value="" title="Check In - Check Out" style="max-width:65%">
+        {{/if_eq}}
+        {{#if_eq domain 'coworking'}}
+          <input id="input-id" autofill="no" name="datetimes" class="form-control" type="text" placeholder="Check In-Check Out" value="" title="Check In - Check Out" style="max-width:65%">
+        {{/if_eq}}
+        {{#if_eq domain 'dance'}}
+          <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+        {{/if_eq}}
+        {{#if_eq domain 'gym'}}
+          <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+        {{/if_eq}}
+        <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+        <input type="text" min="1" max="10" placeholder="No. of People" class="form-control" id="second-input" style="max-width:35%">
+      </div>
+      <br>
+            <input type="text" placeholder="No of rooms" class="form-control" id="down-input"><br>
+            
+      <hr>
+      <b class="marginLeft">Slots available:</b><br>
+      <div class="button-group-pills text-center" data-toggle="buttons" id="slots" style="display: none;">
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-8 col-6">
+          <span><b style="font-size:20px;" class="marginLeft">Total Price:</b></span><br>
+          <span style="font-size:14px;">(Inclusive of all taxes)</span>
+        </div>
+        <div class="col-lg-4 col-6">
+          <span style="font-size:20px;color:#d81b60">
+            <b>₹ <span id="totalPrice">0</span></b>
+          </span>
+        </div>
+      </div><br>
+      <label for="publicID">
+        <input type="text" value="{{space.publicID}}" name="spacePublicID" id="publicID" style="display: none">
+      </label>
+      {{#if login}}
+        <button type="submit" class="btn btn-primary btn-rounded" disabled id="book-form">Book Now</button><br>
+      {{else}}
+        <h6>Please <a href="/user/signin" style="color:#d81b60; text-decoration: underline !important;">Login</a> to Book A Slot</h6>
+      {{/if}}
+      <h6>Booking will be available soon. Stay tuned!</h6>
+    </form>
+  </div>       
+      </div>
+    </div>
+  </div>

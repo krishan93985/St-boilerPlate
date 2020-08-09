@@ -1,0 +1,40 @@
+{
+    "_id": {
+        "$oid": "5ef6708142ab615b408b1a49"
+    },
+    "images": {
+        "imageList": [
+            "https://www.thehindu.com/news/cities/mumbai/jt5vsk/article31618593.ece/ALTERNATES/FREE_960/19BMHOSPITAL",
+            "https://stbeta.s3.ap-south-1.amazonaws.com/covid/bkc/17th+June+-+TOI+.jpeg",
+            "https://stbeta.s3.ap-south-1.amazonaws.com/covid/mmrda/12th+June+-+TOI.jpeg"
+        ],
+        "metaData": [
+            "Photo CC - Emmanual Yogini - https://www.thehindu.com",
+            "17th June - Times Of India",
+            "12th June - Times Of India"
+        ]
+    },
+    "sources": [
+        "https://www.livemint.com/news/india/mumbai-converts-bkc-to-nehru-planetarium-into-quarantine-centres-as-covid-19-cases-rise-11589872488746.html",
+        "https://timesofindia.indiatimes.com/city/mumbai/bkc-isolation-centre-in-mumbai-with-1000-beds-by-friday/articleshow/75730132.cms",
+        "https://www.indiatvnews.com/news/india/coronavirus-mumbai-bkc-biggest-quarantine-centre-mmrda-612516"
+    ],
+    "tags": [],
+    "spaceName": "MMRDA - Bandra Kurla Complex",
+    "phoneNumber": "N/A",
+    "ward": "H East",
+    "spaceType": "Private",
+    "description": "Bandra Kurla Complex is a business and private locale in Bandra, Mumbai. It is a noticeable business center point in India. As indicated by MMRDA, the complex is the first of a progression of growth centres made to arrest further concentration of workplaces and business in South Mumbai.",
+    "no_of_beds": 1000,
+    "area": "BKC",
+    "address": {
+        "streetDetails": "Mumbai Suburban City",
+        "cityName": "Mumbai",
+        "pinCode": 400051,
+        "stateName": "Maharashtra",
+        "country": "India",
+        "gpsLocation": "https://goo.gl/maps/Zi1WL4LN5NnMbjzy5"
+    },
+    "publishedOn": "28th May 2020",
+    "__v": 0
+}

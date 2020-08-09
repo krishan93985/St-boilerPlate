@@ -1,0 +1,25 @@
+{
+  "name": "stboilerplate",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^4.0.4",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "http-errors": "~1.6.2",
+    "moment": "^2.27.0",
+    "mongoose": "^5.9.19",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.1",
+    "uuid": "^8.3.0"
+  }
+}

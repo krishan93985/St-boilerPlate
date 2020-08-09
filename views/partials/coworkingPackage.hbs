@@ -1,0 +1,62 @@
+<div id="coworkingPackageManager" class="row packageManager">
+    <div class="col-12 aFormGroup noInputResize package deleteContent">
+        <div class="container-fluid">
+            <div class="row contentParent coworkingSelectParent">
+                <div class="col-12 col-md-6">
+                          <label for="packageTitle">Title:</label>
+                          <input type="text" id="packageTitle" class="aForm" placeholder="Title..."
+                              oninput="this.className = 'aForm'">
+                      </div>
+                      <div class="col-12 aFormGroup">
+                          <label for="packageDescription">Description:</label>
+                          <textarea type="text" id="packageDescription" class="aForm" placeholder="Description..."
+                              oninput="this.className = 'aForm'"></textarea>
+                      </div>
+                <div class="col-12">
+                    <label for="coworkingSpaceType">Space Type:</label>
+                    <select class="coworkingSpaceType" name="coworkingSpaceType" id="coworkingSpaceType">
+                        <option value="0">Space Type</option>
+                        <option value="1">Desk</option>
+                        <option value="2">Meeting Room</option>
+                        <option value="3">Event Space</option>
+                        <option value="4">Cabin</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="seatCapacity">Capacity:</label>
+                    <input type="number" id="seatCapacity" class="aForm" placeholder="Seat Capacity..."
+                        oninput="this.className = 'aForm'">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="billingCycle">Billing Cycle:</label>
+                    <select class="billingCycle" name="billingCycle" id="billingCycle">
+                        <option value="Billing Cycle">Billing Cycle</option>
+                        <option value="days">Day</option>
+                        <option value="weeks">Week</option>
+                        <option value="months">Month</option>
+                        <option value="years">Year</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="billingDuration">Billing Duration<span class="billingDurationIn"></span>:</label>
+                    <input style="width: 5rem;" type="number" id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..."
+                        oninput="this.className = 'aForm'">
+                </div>
+                <div class="col-12 nodesk coworkingSpace">
+                    <label for="price">Price (in ₹):</label>
+                    <input type="number" id="price" class="aForm" placeholder="Price..."
+                        oninput="this.className = 'aForm'">
+                </div>
+                <div class="col-12 desk coworkingSpace">
+                    <label for="pricePerSeat">Price per Seat (in ₹):</label>
+                    <input type="number" id="pricePerSeat" class="aForm" placeholder="Price per Seat..."
+                        oninput="this.className = 'aForm'">
+                </div>
+                <div class="col-12 deleteBtn"><i class="fas fa-trash-alt"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 px-0 addBtnDiv coworkingBtn">
+        <div class="addBtn text-center"><i class="fa fa-plus"></i></div>
+    </div>
+</div>

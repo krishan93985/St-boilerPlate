@@ -1,0 +1,33 @@
+.irs--big .irs-bar {
+    background: #d81b60;
+    border: none;
+    height: 10px;
+}
+.irs--big .irs-handle {
+    background: #fff;
+    border: none;
+    width: 22px;
+    height: 22px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+.irs--big .irs-from,
+.irs--big .irs-single,
+.irs--big .irs-to {
+    background: #4dd0e1;
+}
+.irs--big .irs-handle.state_hover,
+.irs--big .irs-handle:hover {
+    border-color: rgba(0, 0, 0, 0);
+    background-color: #fff;
+    background: linear-gradient(to bottom, #fff 0, #fff 30%, #fff 100%);
+    cursor: pointer;
+}
+.irs--big .irs-line {
+    height: 10px;
+}
+@media screen and (max-width: 576px) {
+    #slider {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+    }
+}

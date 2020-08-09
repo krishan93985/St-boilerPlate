@@ -1,0 +1,1532 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/timePicker/css/bootstrap-material-datetimepicker.css">
+<script src="/timePicker/js/bootstrap-material-datetimepicker.js" charset="utf-8"></script>
+
+
+<link rel="stylesheet" href="/stylesheets/automation/automation.css">
+<script src="/js/automation/automation.js"></script>
+
+
+
+{{!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> --}}
+{{!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+
+
+
+<div class="background row">
+    <div class="col-lg-6 col-md-12 col-12 heading">
+        <h1 class="heading">Automation Process Prototype</h1>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-12 covidImage">
+        <div class="imageContainer">
+            <img src="/images/automation.png" alt="covidimage" class="image">
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid" style="margin-bottom: 0;">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-11 col-md-9 col-lg-8">
+            <form id="regForm" action="/colivingForm" method="POST">
+
+                <h3 class="">Co-Living space Info:</h3>
+                <div class="row">
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="spaceTitle">Space Title:</label>
+                        <input name="title" type="text" id="spaceTitle" class="aForm required" placeholder="Title..."
+                            oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="title">Space Name:</label>
+                        <input name="spaceName" type="text" id="spaceName" class="aForm required" placeholder="Name..."
+                            oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="spacename" value="1">
+                            <label class="custom-control-label" for="spacename">Space Name is same as Space
+                                Title.</label>
+                        </div>
+                    </div>
+                    <div class="col-12 aFormGroup">
+                        <label class="textareaLabel" for="description">Space Description:</label>
+                        <textarea name="description" type="text" id="description" class="aForm"
+                            placeholder="Description..." oninput="this.className = 'aForm'"></textarea>
+                    </div>
+                    {{!-- <div class="col-12 aFormGroup required">
+                        <label for="domain">Space Type:</label>
+                        <select name="spaceType" id="spaceType">
+                            <option value="0">Space Type</option>
+                            <option value="coworking">Co-Working space</option>
+                            <option value="coliving">Co-Living space</option>
+                            <option value="gym">Gym</option>
+                            <option value="dance">Dance Studio</option>
+                            <option value="pet">Pet Studio</option>
+                        </select>
+                    </div> --}}
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label class="textareaLabel" for="rules">Rules:</label>
+                        <textarea name="rules" type="text" class="aForm required" id="rules" placeholder="Rules..."
+                            oninput="this.className = 'aForm'"></textarea>
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label class="textareaLabel" for="policies">Policies:</label>
+                        <textarea name="policies" type="text" class="aForm required" id="policies"
+                            placeholder="Policies..." oninput="this.className = 'aForm'"></textarea>
+                    </div>
+                    <div class="col-12  aFormGroup">
+                        <label for="mainImage">Main Image:</label>
+                        <input name="mainImage" type="file" id="mainImage">
+                    </div>
+                    <div class="col-12  aFormGroup">
+                        <label for="otherImages">Other Images:</label>
+                        <input name="otherImages" type="file" multiple id="otherImages">
+                    </div>
+                    <div class="aFormGroup col-12 pb-3">
+                        <label for="">Open Hours:</label>
+                        <div class="custom-control custom-checkbox ">
+                            <input name="twentyfourseven" type="checkbox" class="custom-control-input"
+                                id="twentyfourseven" value="1">
+                            <label class="custom-control-label required" for="twentyfourseven">24 ✖️ 7</label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="monday">
+                            <label class="custom-control-label d-flex" for="monday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Monday:
+                                    </div>
+                                    <div class="timePickerWrapper">
+                                        <input name="start" id="monStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="monEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="tuesday">
+                            <label class="custom-control-label d-flex" for="tuesday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Tuesday:
+                                    </div>
+                                    <div class="timePickerWrapper ml-auto">
+                                        <input name="start" id="tueStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="tueEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="wednesday">
+                            <label class="custom-control-label d-flex" for="wednesday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Wednesday:
+                                    </div>
+                                    <div class="timePickerWrapper ml-auto">
+                                        <input name="start" id="wedStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="wedEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="thursday">
+                            <label class="custom-control-label d-flex" for="thursday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Thursday:
+                                    </div>
+                                    <div class="timePickerWrapper ml-auto">
+                                        <input name="start" id="thuStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="thuEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="friday">
+                            <label class="custom-control-label d-flex" for="friday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Friday:
+                                    </div>
+                                    <div class="timePickerWrapper ml-auto">
+                                        <input name="start" id="friStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="friEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="saturday">
+                            <label class="custom-control-label d-flex" for="saturday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Saturday:
+                                    </div>
+                                    <div class="timePickerWrapper ml-auto">
+                                        <input name="start" id="satStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="satEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="custom-control custom-checkbox ohCheck ">
+                            <input name="isOpen" value="1" type="checkbox" class="custom-control-input openHoursDay"
+                                id="sunday">
+                            <label class="custom-control-label d-flex" for="sunday">
+                                <div class="openHoursWrapper">
+                                    <div class="required">
+                                        Sunday:
+                                    </div>
+                                    <div class="timePickerWrapper ml-auto">
+                                        <input name="start" id="sunStart" value="" class="timePicker required"
+                                            type="text"> to <input name="end" id="sunEnd" value=""
+                                            class="timePicker required" type="text">
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <h3 class="">Space Location Info:</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="custom-control custom-checkbox">
+                            <input name="sameaddress" type="checkbox" class="custom-control-input" id="sameaddress"
+                                value="1">
+                            <label class="custom-control-label" for="sameaddress">Brand address and space address
+                                are the same.</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="flatDetails">Flat Details:</label>
+                        <input name="flatdetails" type="text" class="aForm required" id="flatDetails"
+                            placeholder="Flat Details..." oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="floorDetails">Floor Details:</label>
+                        <input name="floorNo" type="text" class="aForm" id="floorDetails" placeholder="Floor Details..."
+                            oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 aFormGroup">
+                        <label for="buildingDetails">Building Details:</label>
+                        <input name="buildingDetails" type="text" class="aForm" id="buildingDetails"
+                            placeholder="Building Details..." oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 aFormGroup">
+                        <label class="textareaLabel" for="streetDetails">Street Details:</label>
+                        <textarea name="streetDetails" type="text" id="streetDetails" class="aForm"
+                            placeholder="Street Details..." oninput="this.className = 'aForm'"></textarea>
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="cityName">City Name:</label>
+                        <input name="cityName" type="text" class="aForm required" id="cityName"
+                            placeholder="City Name..." oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="pincode">Pincode:</label>
+                        <input name="pinCode" type="number" class="aForm required" id="pincode" placeholder="Pincode..."
+                            oninput="this.className = 'aForm'" type="number">
+                    </div>
+                    <div class="col-12 aFormGroup">
+                        <label for="landmark">Landmark:</label>
+                        <input name="landmark" type="text" class="aForm" id="landmark" placeholder="Landmark..."
+                            oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="stateName">State Name:</label>
+                        <input name="stateName" type="text" class="aForm required" id="stateName"
+                            placeholder="State Name..." oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 col-md-6 aFormGroup">
+                        <label for="country">Country:</label>
+                        <input name="country" type="text" class="aForm required" id="country" placeholder="Country..."
+                            oninput="this.className = 'aForm'">
+                    </div>
+                    <div class="col-12 aFormGroup">
+                        <label for="gpsLocation">GPS Location:</label>
+                        <input name="gpsLocation" type="text" class="aForm required" id="gpsLocation"
+                            placeholder="Enter a google maps link..." oninput="this.className = 'aForm'">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h3 class="">Space Features:</h3>
+                <div class="row">
+                    <div class="col-12 aFormGroup noInputResize">
+                        <h4>Amenities:</h4>
+                        <div class="row mb-4 amenitiesContainer">
+                            {{!--<div class="col-auto px-4 py-2 coli">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="amenities" type="checkbox" class="custom-control-input" id="parkingFacility"
+                                            value="Parking Facility">
+                                        <label class="custom-control-label" for="parkingFacility">Parking
+                                            Facility</label>
+                                    </div>
+                                </div> --}}
+                            {{!-- <div class="col-auto px-4 py-2 coli">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="Wifi" type="checkbox" class="custom-control-input" id="freeWifi"
+                                            value="Free Wifi">
+                                        <label class="custom-control-label" for="freeWifi">Free Wifi</label>
+                                    </div>
+                                </div> --}}
+                            {{!-- <div class="col-auto px-4 py-2 coli">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="Wifi" type="checkbox" class="custom-control-input" 
+                                            value="Free Wifi">
+                                        <label class="custom-control-label" for="Wifi"> Wifi</label>
+                                    </div>
+                                </div> --}}
+                            {{!-- <div class="col-auto px-4 py-2 coli">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="" type="checkbox" class="custom-control-input" id="cardPayment"
+                                            value="Card Payment">
+                                        <label class="custom-control-label" for="cardPayment">Card Payment</label>
+                                    </div>
+                                </div> --}}
+                            <div class="col-auto px-4 py-2 coli">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="elevator"
+                                        value="Elevator">
+                                    <label class="custom-control-label" for="elevator">Elevator</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 coli">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="attachedBathroom" value="Attached Bathroom">
+                                    <label class="custom-control-label" for="attachedBathroom">Attached
+                                        Bathroom</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 coli">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="furniture"
+                                        value="Furniture">
+                                    <label class="custom-control-label" for="furniture">Furniture</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="internet"
+                                        value="Internet">
+                                    <label class="custom-control-label" for="internet">Internet</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="wifi"
+                                        value="Wifi">
+                                    <label class="custom-control-label" for="wifi">Wifi</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="leasedLine"
+                                        value="Leased Line">
+                                    <label class="custom-control-label" for="leasedLine">Leased Line</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="locker"
+                                        value="Locker">
+                                    <label class="custom-control-label" for="locker">Locker</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="printScanCopy" value="Print/Scan/Copy">
+                                    <label class="custom-control-label" for="printScanCopy">Print/Scan/Copy</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="2wparking"
+                                        value="2 W Parking">
+                                    <label class="custom-control-label" for="2wparking">2 W Parking</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="4wparking"
+                                        value="4 W Parking">
+                                    <label class="custom-control-label" for="4wparking">4 W Parking</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="WhiteBoard"
+                                        value="White Board">
+                                    <label class="custom-control-label" for="WhiteBoard">White Board</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="Pantry"
+                                        value="Pantry">
+                                    <label class="custom-control-label" for="Pantry">Pantry</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="Reception"
+                                        value="Reception">
+                                    <label class="custom-control-label" for="Reception">Reception</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="Lift"
+                                        value="Lift">
+                                    <label class="custom-control-label" for="Lift">Lift</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 coworkingCheck">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="AC"
+                                        value="AC">
+                                    <label class="custom-control-label" for="AC">AC</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="teaCoffee"
+                                        value="Tea/Coffee">
+                                    <label class="custom-control-label" for="teaCoffee">Tea/Coffee</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="projectorTv" value="Projector/TV">
+                                    <label class="custom-control-label" for="projectorTv">Projector/TV</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="powerBackup" value="Power Backup">
+                                    <label class="custom-control-label" for="powerBackup">Power Backup</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 cowor">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="securityCCTV" value="Security/CCTV">
+                                    <label class="custom-control-label" for="securityCCTV">Security/CCTV</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 danceCheck">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="lockerShower" value="Locker and Shower Facilities">
+                                    <label class="custom-control-label" for="lockerShower">Locker and Shower
+                                        Facilities</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 d">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="musicSpeakers" value="Music Speakers">
+                                    <label class="custom-control-label" for="musicSpeakers">Music Speakers</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 danceCheck">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="openOnSundays" value="Open on Sundays">
+                                    <label class="custom-control-label" for="openOnSundays">Open on Sundays</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="cardioEquipment" value="Cardio Equipment">
+                                    <label class="custom-control-label" for="cardioEquipment">Cardio
+                                        Equipment</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="personalTrainer" value="Personal Trainer">
+                                    <label class="custom-control-label" for="personalTrainer">Personal
+                                        Trainer</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="outdoorPlay" value="Outdoor Play Area">
+                                    <label class="custom-control-label" for="outdoorPlay">Outdoor Play Area</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="indoorPlay"
+                                        value="Indoor Play Area">
+                                    <label class="custom-control-label" for="indoorPlay">Indoor Play Area</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input"
+                                        id="swimmingPool" value="Swimming Pool">
+                                    <label class="custom-control-label" for="swimmingPool">Swimming Pool</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="park"
+                                        value="Park">
+                                    <label class="custom-control-label" for="park">Park</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="petCam"
+                                        value="24x7 Pet Cam Access">
+                                    <label class="custom-control-label" for="petCam">24x7 Pet Cam Access</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="amenities" type="checkbox" class="custom-control-input" id="pickUp"
+                                        value="Pick and Drop Service">
+                                    <label class="custom-control-label" for="pickUp">Pick and Drop Service</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{!-- <div class="col-12 aFormGroup noInputResize">
+                            <h4>Multipurpose Tags:</h4>
+                            <div class="row mb-4">
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="photoShoot"
+                                            value="Photo Shoot">
+                                        <label class="custom-control-label" for="photoShoot">Photo Shoot</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="tuition"
+                                            value="Tuition">
+                                        <label class="custom-control-label" for="tuition">Tuition</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="virtualClass"
+                                            value="Virtual Class">
+                                        <label class="custom-control-label" for="virtualClass">Virtual Class</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="legalPurposes"
+                                            value="Legal Purposes">
+                                        <label class="custom-control-label" for="legalPurposes">Legal Purposes</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="locationShoot"
+                                            value="Location Shoot">
+                                        <label class="custom-control-label" for="locationShoot">Location Shoot</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="events" value="Events">
+                                        <label class="custom-control-label" for="events">Events</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+                    <div class="col-12 aFormGroup noInputResize">
+                        <h4>Categories:</h4>
+                        <div class="row mb-4 categoriesContainer">
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="Cabin"
+                                        value="Cabin">
+                                    <label class="custom-control-label" for="Cabin">Cabin</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="ConferenceRoom" value="Conference Room">
+                                    <label class="custom-control-label" for="ConferenceRoom">Conference Room</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="DiscussionRoom" value="Discussion Room">
+                                    <label class="custom-control-label" for="DiscussionRoom">Discussion Room</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="Homestay"
+                                        value="Homestay">
+                                    <label class="custom-control-label" for="Homestay">Homestay</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="Hostel"
+                                        value="Hostel">
+                                    <label class="custom-control-label" for="Hostel">Hostel</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="House"
+                                        value="House">
+                                    <label class="custom-control-label" for="House">House</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="Hotel"
+                                        value="Hotel">
+                                    <label class="custom-control-label" for="Hotel">Hotel</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="PG"
+                                        value="PG">
+                                    <label class="custom-control-label" for="PG">PG</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="Flat"
+                                        value="Flat">
+                                    <label class="custom-control-label" for="Flat">Flat</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 ">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="privateRoom" value="Private Room">
+                                    <label class="custom-control-label" for="privateRoom">Private Room</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 ">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="openDesk"
+                                        value="Open Desk">
+                                    <label class="custom-control-label" for="openDesk">Open Desk</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 ">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="eventSpace" value="Event Space">
+                                    <label class="custom-control-label" for="eventSpace">Event Space</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 ">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="virtualSpace" value="Virtual Space">
+                                    <label class="custom-control-label" for="virtualSpace">Virtual Space</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 ">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="meetingSpace" value="Meeting Space">
+                                    <label class="custom-control-label" for="meetingSpace">Meeting Space</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2 ">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="trainingSpace" value="Training Space">
+                                    <label class="custom-control-label" for="trainingSpace">Training Space</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="ballet"
+                                        value="Ballet">
+                                    <label class="custom-control-label" for="ballet">Ballet</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="kathak"
+                                        value="Kathak">
+                                    <label class="custom-control-label" for="kathak">Kathak</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="breakDance" value="Break Dance">
+                                    <label class="custom-control-label" for="breakDance">Break Dance</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="lionDance"
+                                        value="Lion Dance">
+                                    <label class="custom-control-label" for="lionDance">Lion Dance</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="tapDance"
+                                        value="Tap Dance">
+                                    <label class="custom-control-label" for="tapDance">Tap Dance</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="salsa"
+                                        value="Salsa">
+                                    <label class="custom-control-label" for="salsa">Salsa</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="bellyDance" value="Belly Dance">
+                                    <label class="custom-control-label" for="bellyDance">Belly Dance</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="Zumba"
+                                        value="Zumba">
+                                    <label class="custom-control-label" for="Zumba">Zumba</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="fitnessStudio" value="Fitness Studio">
+                                    <label class="custom-control-label" for="fitnessStudio">Fitness Studio</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="mma"
+                                        value="MMA and Kick Boxing">
+                                    <label class="custom-control-label" for="mma">MMA and Kick Boxing</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="strengthTraining" value="Strength Training">
+                                    <label class="custom-control-label" for="strengthTraining">Strength
+                                        Training</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="crossFunctionalTraining" value="Cross Functional Training">
+                                    <label class="custom-control-label" for="crossFunctionalTraining">Cross
+                                        Functional Training</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="kidsFitness" value="Kids Fitness">
+                                    <label class="custom-control-label" for="kidsFitness">Kids Fitness</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="spinning"
+                                        value="Spinning">
+                                    <label class="custom-control-label" for="spinning">Spinning</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="massages"
+                                        value="Massages">
+                                    <label class="custom-control-label" for="massages">Massages</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="cardio"
+                                        value="Cardio">
+                                    <label class="custom-control-label" for="cardio">Cardio</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="adoption"
+                                        value="Adoption">
+                                    <label class="custom-control-label" for="adoption">Adoption</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="boarding"
+                                        value="Boarding">
+                                    <label class="custom-control-label" for="boarding">Boarding</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="doggieDaycare" value="Doggie Daycare">
+                                    <label class="custom-control-label" for="doggieDaycare">Doggie Daycare</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input" id="socialize"
+                                        value="Socializing">
+                                    <label class="custom-control-label" for="socialize">Socializing</label>
+                                </div>
+                            </div>
+                            <div class="col-auto px-4 py-2">
+                                <div class="custom-control custom-checkbox">
+                                    <input name="categories" type="checkbox" class="custom-control-input"
+                                        id="petParties" value="Pet Parties">
+                                    <label class="custom-control-label" for="petParties">Pet Parties</label>
+                                </div>
+                            </div>
+                            {{!-- <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="" type="checkbox" class="custom-control-input" id="cardio" value="Cardio">
+                                        <label class="custom-control-label" for="cardio">Cardio</label>
+                                    </div>
+                                </div>  --}}
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <h3 class="">Guidelines :</h3>
+
+                <div class="col-12 aFormGroup noInputResize">
+                    <h4>Covid Guidelines:</h4>
+                    <div class="row mb-4 categoriesContainer">
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="0"
+                                    value="0">
+                                <label class="custom-control-label" for="0">ksdcshdbc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="1"
+                                    value="1">
+                                <label class="custom-control-label" for="1">b</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="2"
+                                    value="2">
+                                <label class="custom-control-label" for="2">ksdcshdbc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="3"
+                                    value="3">
+                                <label class="custom-control-label" for="3">ksdcshd3bc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="4"
+                                    value="4">
+                                <label class="custom-control-label" for="4">ksdcs4hdbc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="5"
+                                    value="5">
+                                <label class="custom-control-label" for="5">ksdcshd5bc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="6"
+                                    value="6">
+                                <label class="custom-control-label" for="6">ksdc6shdbc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="7"
+                                    value="7">
+                                <label class="custom-control-label" for="7">ksdcsh7dbc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="8"
+                                    value="8">
+                                <label class="custom-control-label" for="8">8</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="9"
+                                    value="9">
+                                <label class="custom-control-label" for="9">ksdcshd9bc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="10"
+                                    value="10">
+                                <label class="custom-control-label" for="10">ksdcshd10bc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="11"
+                                    value="11">
+                                <label class="custom-control-label" for="11">ksdcshdb11c</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="12"
+                                    value="12">
+                                <label class="custom-control-label" for="12">ksdc12shdbc</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="13"
+                                    value="13">
+                                <label class="custom-control-label" for="13">ksdcshdb13c</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="14"
+                                    value="14">
+                                <label class="custom-control-label" for="14">ksdcshdb14c</label>
+                            </div>
+                        </div>
+                        <div class="col-auto px-4 py-2">
+                            <div class="custom-control custom-checkbox">
+                                <input name="covidGuidelines" type="checkbox" class="custom-control-input" id="15"
+                                    value="15">
+                                <label class="custom-control-label" for="15">ksdcshdb15c</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <h3 class="">Deposit :</h3>
+                <div class="col-12 col-md-6 aFormGroup">
+                    <label for="advDeposits">Advanced Deposit:</label>
+                    <input name="advDeposit" type="text" id="advDeposit" class="aForm required"
+                        placeholder="Advanced Deposit..." oninput="this.className = 'aForm'">
+                </div>
+
+
+
+                <h3 class="">Payment Structure and Packages</h3>
+
+
+
+                <div class="row">
+                    <div class="col-12 col-lg-6 ">
+
+                        <p>
+                            <button class="formBtn" type="button" data-toggle="collapse" data-target="#collapseExample3"
+                                aria-expanded="false" aria-controls="collapseExample3">
+                                Desk
+                            </button>
+                        </p>
+
+                        <div class="border container card card-body collapse" id="collapseExample3">
+
+
+
+
+                            <h3 class="">Desk :</h3>
+
+
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageTitle">Title:</label>
+                                <input name="title2" type="text" id="packageTitle" class="aForm" placeholder="Title..."
+                                    style="border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 1rem 0 1rem 0;
+    padding: 0.3rem 1rem;
+    display: inline-block;" oninput="this.className = 'aForm'">
+
+                            </div>
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageDescription">Description:</label>
+                                <textarea name="description2" type="text" id="packageDescription" class="aForm" style="border: none;
+    outline: none;
+    padding: 0.2rem 1rem;
+    min-height: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);" placeholder="Description..."
+                                    oninput="this.className = 'aForm'"></textarea>
+                            </div>
+
+
+
+                            {{!-- <div class="col-12">
+                        <label for="coworkingSpaceType">Space Type:</label>
+                        <select class="coworkingSpaceType" name="coworkingSpaceType" type="text"
+                            id="coworkingSpaceType">
+                            <option value="0">Space Type</option>
+                            <option value="1">Desk</option>
+                            <option value="2">Meeting Room</option>
+                            <option value="3">Event Space</option>
+                            <option value="4">Cabin</option>
+                        </select>
+                    </div> --}}
+
+
+                            <button id="addRow" type="button" class="formBtn" style="margin: 1rem;"><i
+                                    class="fa fa-plus"></i></button>
+
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <div id="newRow"></div>
+
+                                </div>
+                            </div>
+
+
+
+                            <script>
+                                // add row
+                                $("#addRow").click(function () {
+                                    var html = '';
+                                    html += '<div id="inputFormRow">';
+                                    html += '<div class="col-12 aFormGroup">'
+                                    html += '<label for="packageName">Name:</label>'
+                                    html += '<textarea name="Deskname" type="text" id="packageName" class="aForm" placeholder="Name..." ></textarea>'
+                                    html += ' </div>'
+                                    html += ' <div class="col-12">'
+                                    html += ' <label for="seatCapacity">Capacity:</label>'
+                                    html += '  <input name="Deskcapacity" type="number" id="seatCapacity" class="aForm" placeholder="Seat Capacity..." >'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += ' <label for="billingCycle">Billing Cycle:</label>'
+                                    html += ' <select name="DeskbillingCycle" type="text" class="billingCycle" name="billingCycle" id="billingCycle">'
+                                    html += '<option value="Billing Cycle">Billing Cycle</option>'
+                                    html += '  <option value="days">Day</option>'
+                                    html += ' <option value="weeks">Week</option>'
+                                    html += ' <option value="months">Month</option>'
+                                    html += ' <option value="years">Year</option>'
+                                    html += ' </select>'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += '<label for="billingDuration">Billing Duration<span class="billingDurationIn"></span>:</label>'
+                                    html += '<input name="DeskbillingDuration" style="width: 5rem;" type="number" id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..." >'
+                                    html += '  </div>'
+                                    html += '<div class="col-12 nodesk coworkingSpace">'
+                                    html += ' <label for="price">Price (in ₹):</label>'
+                                    html += '<input name="Deskprice" type="number" id="price" class="aForm" placeholder="Price..." >'
+                                    html += '</div>'
+                                    html += '<div class="input-group-append">   '
+                                    html += '<button id="removeRow" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>'
+                                    html += '  </div>'
+                                    html += '</div>';
+
+
+                                    $('#newRow').append(html);
+                                });
+
+                                // remove row
+                                $(document).on('click', '#removeRow', function () {
+                                    $(this).closest('#inputFormRow').remove();
+                                });
+                            </script>
+
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 ">
+                        <p>
+                            <button class="formBtn" type="button" data-toggle="collapse" data-target="#collapseExample2"
+                                aria-expanded="false" aria-controls="collapseExample2">
+                                Meeting Room
+                            </button>
+                        </p>
+
+                        <div class="border container card card-body collapse" id="collapseExample2">
+
+                            <h3 class="">Meeting Room :</h3>
+
+
+
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageTitle">Title:</label>
+                                <input name="title2" type="text" id="packageTitle" class="aForm" placeholder="Title..."
+                                    style="border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 1rem 0 1rem 0;
+    padding: 0.3rem 1rem;
+    display: inline-block;" oninput="this.className = 'aForm'">
+
+                            </div>
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageDescription">Description:</label>
+                                <textarea name="description2" type="text" id="packageDescription" class="aForm" style="border: none;
+    outline: none;
+    padding: 0.2rem 1rem;
+    min-height: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);" placeholder="Description..."
+                                    oninput="this.className = 'aForm'"></textarea>
+                            </div>
+
+                            {{!-- <div class="col-12">
+                        <label for="coworkingSpaceType">Space Type:</label>
+                        <select class="coworkingSpaceType" name="coworkingSpaceType" type="text"
+                            id="coworkingSpaceType">
+                            <option value="0">Space Type</option>
+                            <option value="1">Desk</option>
+                            <option value="2">Meeting Room</option>
+                            <option value="3">Event Space</option>
+                            <option value="4">Cabin</option>
+                        </select>
+                    </div> --}}
+
+                            <button id="addRow1" type="button" class="formBtn" style="margin: 1rem;"><i
+                                    class="fa fa-plus"></i></button>
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {{!-- <div id="inputFormRow1">
+                            <div class="input-group mb-3">
+                                <div class="col-12 aFormGroup">
+                                    <label for="packageName">Name:</label>
+                                    <textarea name="name" type="text" id="packageName" class="aForm"
+                                        placeholder="Name..." oninput="this.className = 'aForm'"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="seatCapacity">Capacity:</label>
+                                    <input name="capacity" type="number" id="seatCapacity" class="aForm"
+                                        placeholder="Seat Capacity..." oninput="this.className = 'aForm'">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="billingCycle">Billing Cycle:</label>
+                                    <select name="billingCycle" type="text" class="billingCycle" name="billingCycle"
+                                        id="billingCycle">
+                                        <option value="Billing Cycle">Billing Cycle</option>
+                                        <option value="days">Day</option>
+                                        <option value="weeks">Week</option>
+                                        <option value="months">Month</option>
+                                        <option value="years">Year</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="billingDuration">Billing Duration<span
+                                            class="billingDurationIn"></span>:</label>
+                                    <input name="billingDuration" style="width: 5rem;" type="number"
+                                        id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..."
+                                        oninput="this.className = 'aForm'">
+                                </div>
+                                <div class="col-12 nodesk coworkingSpace">
+                                    <label for="price">Price (in ₹):</label>
+                                    <input name="price" type="number" id="price" class="aForm" placeholder="Price..."
+                                        oninput="this.className = 'aForm'">
+                                </div>
+                                <div class="input-group-append">
+                                    <button id="removeRow1" type="button" class="btn btn-danger"><i
+                                            class="fas fa-trash-alt"></i></button>
+
+                                </div>
+                            </div>
+                        </div> --}}
+
+                                    <div id="newRow1"></div>
+
+                                </div>
+                            </div>
+
+                            <script>
+                                // add row
+                                $("#addRow1").click(function () {
+                                    var html = '';
+                                    html += '<div id="inputFormRow1">';
+                                    html += '<div class="col-12 aFormGroup">'
+                                    html += '<label for="packageName">Name:</label>'
+                                    html += '<textarea name="MRname" type="text" id="packageName" class="aForm" placeholder="Name..." ></textarea>'
+                                    html += ' </div>'
+                                    html += ' <div class="col-12">'
+                                    html += ' <label for="seatCapacity">Capacity:</label>'
+                                    html += '  <input name="MRcapacity" type="number" id="seatCapacity" class="aForm" placeholder="Seat Capacity..." >'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += ' <label for="billingCycle">Billing Cycle:</label>'
+                                    html += ' <select name="MRbillingCycle" type="text" class="billingCycle" name="billingCycle" id="billingCycle">'
+                                    html += '<option value="Billing Cycle">Billing Cycle</option>'
+                                    html += '  <option value="days">Day</option>'
+                                    html += ' <option value="weeks">Week</option>'
+                                    html += ' <option value="months">Month</option>'
+                                    html += ' <option value="years">Year</option>'
+                                    html += ' </select>'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += '<label for="billingDuration">Billing Duration<span class="billingDurationIn"></span>:</label>'
+                                    html += '<input name="MRbillingDuration" style="width: 5rem;" type="number" id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..." >'
+                                    html += '  </div>'
+                                    html += '<div class="col-12 nodesk coworkingSpace">'
+                                    html += ' <label for="price">Price (in ₹):</label>'
+                                    html += '<input name="MRprice" type="number" id="price" class="aForm" placeholder="Price..." >'
+                                    html += '</div>'
+                                    // html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
+                                    html += '<div class="input-group-append">   '
+                                    html += '<button id="removeRow1" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>'
+                                    //      html+=                         ' <button id="addRow" type="button" class="btn btn-info" ><i class="fa fa-plus"></i></button>'
+                                    html += '  </div>'
+                                    html += '</div>';
+
+
+                                    $('#newRow1').append(html);
+                                });
+
+                                // remove row
+                                $(document).on('click', '#removeRow1', function () {
+                                    $(this).closest('#inputFormRow1').remove();
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-6 ">
+
+                        <p>
+                            <button class="formBtn" type="button" data-toggle="collapse" data-target="#collapseExample1"
+                                aria-expanded="false" aria-controls="collapseExample1">
+                                Event Space
+                            </button>
+                        </p>
+
+                        <div class="border container card card-body collapse" id="collapseExample1">
+
+
+                            <h3 class="">Event Space :</h3>
+
+
+
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageTitle">Title:</label>
+                                <input name="title2" type="text" id="packageTitle" class="aForm" placeholder="Title..."
+                                    style="border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 1rem 0 1rem 0;
+    padding: 0.3rem 1rem;
+    display: inline-block;" oninput="this.className = 'aForm'">
+
+                            </div>
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageDescription">Description:</label>
+                                <textarea name="description2" type="text" id="packageDescription" class="aForm" style="border: none;
+    outline: none;
+    padding: 0.2rem 1rem;
+    min-height: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);" placeholder="Description..."
+                                    oninput="this.className = 'aForm'"></textarea>
+                            </div>
+
+
+                            {{!-- <div class="col-12">
+                        <label for="coworkingSpaceType">Space Type:</label>
+                        <select class="coworkingSpaceType" name="coworkingSpaceType" type="text"
+                            id="coworkingSpaceType">
+                            <option value="0">Space Type</option>
+                            <option value="1">Desk</option>
+                            <option value="2">Meeting Room</option>
+                            <option value="3">Event Space</option>
+                            <option value="4">Cabin</option>
+                        </select>
+                    </div> --}}
+
+                            <button id="addRow2" type="button" class="formBtn" style="margin: 1rem;"><i
+                                    class="fa fa-plus"></i></button>
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {{!-- <div id="inputFormRow2">
+                            <div class="input-group mb-3">
+                                <div class="col-12 aFormGroup">
+                                    <label for="packageName">Name:</label>
+                                    <textarea name="name" type="text" id="packageName" class="aForm"
+                                        placeholder="Name..." oninput="this.className = 'aForm'"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="seatCapacity">Capacity:</label>
+                                    <input name="capacity" type="number" id="seatCapacity" class="aForm"
+                                        placeholder="Seat Capacity..." oninput="this.className = 'aForm'">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="billingCycle">Billing Cycle:</label>
+                                    <select name="billingCycle" type="text" class="billingCycle" name="billingCycle"
+                                        id="billingCycle">
+                                        <option value="Billing Cycle">Billing Cycle</option>
+                                        <option value="days">Day</option>
+                                        <option value="weeks">Week</option>
+                                        <option value="months">Month</option>
+                                        <option value="years">Year</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="billingDuration">Billing Duration<span
+                                            class="billingDurationIn"></span>:</label>
+                                    <input name="billingDuration" style="width: 5rem;" type="number"
+                                        id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..."
+                                        oninput="this.className = 'aForm'">
+                                </div>
+                                <div class="col-12 nodesk coworkingSpace">
+                                    <label for="price">Price (in ₹):</label>
+                                    <input name="price" type="number" id="price" class="aForm" placeholder="Price..."
+                                        oninput="this.className = 'aForm'">
+                                </div>
+                                <div class="input-group-append">
+                                    <button id="removeRow2" type="button" class="btn btn-danger"><i
+                                            class="fas fa-trash-alt"></i></button>
+
+                                </div>
+                            </div>
+                        </div> --}}
+
+                                    <div id="newRow2"></div>
+
+                                </div>
+                            </div>
+
+
+
+                            <script>
+                                // add row
+                                $("#addRow2").click(function () {
+                                    var html = '';
+                                    html += '<div id="inputFormRow2">';
+                                    html += '<div class="col-12 aFormGroup">'
+                                    html += '<label for="packageName">Name:</label>'
+                                    html += '<textarea name="ESname" type="text" id="packageName" class="aForm" placeholder="Name..." ></textarea>'
+                                    html += ' </div>'
+                                    html += ' <div class="col-12">'
+                                    html += ' <label for="seatCapacity">Capacity:</label>'
+                                    html += '  <input name="EScapacity" type="number" id="seatCapacity" class="aForm" placeholder="Seat Capacity..." >'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += ' <label for="billingCycle">Billing Cycle:</label>'
+                                    html += ' <select name="ESbillingCycle" type="text" class="billingCycle" name="billingCycle" id="billingCycle">'
+                                    html += '<option value="Billing Cycle">Billing Cycle</option>'
+                                    html += '  <option value="days">Day</option>'
+                                    html += ' <option value="weeks">Week</option>'
+                                    html += ' <option value="months">Month</option>'
+                                    html += ' <option value="years">Year</option>'
+                                    html += ' </select>'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += '<label for="billingDuration">Billing Duration<span class="billingDurationIn"></span>:</label>'
+                                    html += '<input name="ESbillingDuration" style="width: 5rem;" type="number" id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..." >'
+                                    html += '  </div>'
+                                    html += '<div class="col-12 nodesk coworkingSpace">'
+                                    html += ' <label for="price">Price (in ₹):</label>'
+                                    html += '<input name="ESprice" type="number" id="price" class="aForm" placeholder="Price..." >'
+                                    html += '</div>'
+                                    // html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
+                                    html += '<div class="input-group-append">   '
+                                    html += '<button id="removeRow2" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>'
+                                    //      html+=                         ' <button id="addRow" type="button" class="btn btn-info" ><i class="fa fa-plus"></i></button>'
+                                    html += '  </div>'
+                                    html += '</div>';
+
+
+                                    $('#newRow2').append(html);
+                                });
+
+                                // remove row
+                                $(document).on('click', '#removeRow2', function () {
+                                    $(this).closest('#inputFormRow2').remove();
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 ">
+                        <p>
+                            <button class="formBtn" type="button" data-toggle="collapse" data-target="#collapseExample"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                Cabin
+                            </button>
+                        </p>
+
+
+                        <div class="border container card card-body collapse" id="collapseExample">
+
+                            <h3 class="">Cabin :</h3>
+
+
+
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageTitle">Title:</label>
+                                <input name="title2" type="text" id="packageTitle" class="aForm" placeholder="Title..."
+                                    style="border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    margin: 1rem 0 1rem 0;
+    padding: 0.3rem 1rem;
+    display: inline-block;" oninput="this.className = 'aForm'">
+
+                            </div>
+                            <div class="col-12 col-md-6 ">
+                                <label for="packageDescription">Description:</label>
+                                <textarea name="description2" type="text" id="packageDescription" class="aForm" style="border: none;
+    outline: none;
+    padding: 0.2rem 1rem;
+    min-height: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);" placeholder="Description..."
+                                    oninput="this.className = 'aForm'"></textarea>
+                            </div>
+
+
+                            <button id="addRow3" type="button" class="formBtn" style="margin: 1rem;"><i
+                                    class="fa fa-plus"></i></button>
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                    <div id="newRow3"></div>
+
+                                </div>
+                            </div>
+
+                            <script>
+                                // add row
+                                $("#addRow3").click(function () {
+                                    var html = '';
+                                    html += '<div id="inputFormRow3">';
+                                    html += '<div class="col-12 aFormGroup">'
+                                    html += '<label for="packageName">Name:</label>'
+                                    html += '<textarea name="Cname" type="text" id="packageName" class="aForm" placeholder="Name..." ></textarea>'
+                                    html += ' </div>'
+                                    html += ' <div class="col-12">'
+                                    html += ' <label for="seatCapacity">Capacity:</label>'
+                                    html += '  <input name="Ccapacity" type="number" id="seatCapacity" class="aForm" placeholder="Seat Capacity..." >'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += ' <label for="billingCycle">Billing Cycle:</label>'
+                                    html += ' <select name="CbillingCycle" type="text" class="billingCycle" name="billingCycle" id="billingCycle">'
+                                    html += '<option value="Billing Cycle">Billing Cycle</option>'
+                                    html += '  <option value="days">Day</option>'
+                                    html += ' <option value="weeks">Week</option>'
+                                    html += ' <option value="months">Month</option>'
+                                    html += ' <option value="years">Year</option>'
+                                    html += ' </select>'
+                                    html += ' </div>'
+                                    html += '<div class="col-12 col-md-6">'
+                                    html += '<label for="billingDuration">Billing Duration<span class="billingDurationIn"></span>:</label>'
+                                    html += '<input name="CbillingDuration" style="width: 5rem;" type="number" id="billingDuration" value="1" class="aForm" placeholder="Billing Duration..." >'
+                                    html += '</div>'
+                                    html += '<div class="col-12 nodesk coworkingSpace">'
+                                    html += '<label for="price">Price (in ₹):</label>'
+                                    html += '<input name="Cprice" type="number" id="price" class="aForm" placeholder="Price..." >'
+                                    html += '</div>'
+                                    html += '<div class="input-group-append">   '
+                                    html += '<button id="removeRow3" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>'
+                                    html += '</div>'
+                                    html += '</div>';
+
+
+                                    $('#newRow3').append(html);
+                                });
+
+                                // remove row
+                                $(document).on('click', '#removeRow3', function () {
+                                    $(this).closest('#inputFormRow3').remove();
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <button type="submit" class="formBtn btn btn-danger" style="margin-top: 20px;margin-bottom: 20px " name="button"
+                    style="color: #D81B60;" type="submit">Submit</button>
+
+
+            </form>
+        </div>
+    </div>
+</div>

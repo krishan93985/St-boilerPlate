@@ -1,0 +1,41 @@
+#offer-bg{
+    width:100%;
+    height:40vh;
+    left:0;
+    right:0;
+    background-color: #4dd0e1;
+
+}
+.offer-card img{
+    border-radius:50px;
+}
+.for_slick_slider{
+    display:flex;
+}
+.for_slick_slider .items{
+    width:350px;
+    height:250px;
+    margin:50px;
+    position: relative;
+}
+.for_slick_slider .items .overlay{
+    top:0;
+    left:0;
+    position: absolute;
+    width:350px;
+    height:250px;
+}
+.for_slick_slider .items .card img{
+    /* width:350px;
+    height:250px;
+    transition: all linear .4s; */
+    position: absolute;
+    width: 343.16px;
+    height: 202.74px;
+    left: 547.84px;
+    top: 1850.67px;
+    border-radius: 40px 40px 0 0;
+}
+.for_slick_slider .slick-center img{
+    transform:scale(1.4);
+}

@@ -1,0 +1,370 @@
+<script src='/javascripts/filter/dance.js'></script>
+<div class="sidenav" id="mySidenav">
+    <div class="row sticky-top">
+        <div class="col-6"><label><b class="side-bar" style="font-size: 24px;">Filter</b></label></div>
+        <div class="col-5"> <button type="button" id="filterApplied" class="btn filter-btn"><b>Apply</b></button>
+        </div>
+        <div class="col-xs-2" id="xbtn"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row" style="padding-top: 10px;">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <b class="side-bar side-bar-price">Price Per Hour</b><br>
+            <div id="slider"><input type="text" class="js-range-slider" name="my_range" value="" /></div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <br><br>
+    {{!-- <label><b class="side-bar">Type of Space</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="ballet" name="option1" value="Ballet">Fixed Desks
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="kathak" name="option1" value="Kathak">Cabins
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Meeting
+                Rooms
+            </label>
+        </div> --}}
+        {{!-- <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="hipHop" name="option1" value="Hip Hop">Hip Hop
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="tap" name="option1" value="Tap Dance">Tap
+                Dance
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="urban" name="option1" value="Urban">Urban
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="bellyDance" name="option1" value="Belly Dance">Belly
+                Dance
+            </label>
+        </div> --}}
+
+    {{!-- </div><br> --}}
+     <label><b class="side-bar">Facilities</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="ballet" name="option1" value="Ballet">Spinning
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="kathak" name="option1" value="Kathak">24 Hour Facility
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Personal Training
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Get your own trainer
+            </label>
+        </div>
+
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Cardio Equipment
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Strength and Training Equipment
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Stretching Area
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Cycling Studio
+            </label>
+        </div>
+
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Nutritional Support
+            </label>
+        </div>
+
+                        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Physiotherapy
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Locker and Shower Facilities
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">parking
+            </label>
+        </div>
+        </div><br>
+
+        <label><b class="side-bar">Amenities</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="kathak" name="option1" value="Kathak">Massages
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Juice Bar
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Swimming Pool
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Steam and Sauna
+            </label>
+        </div>
+                        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Music and Video Entertainment
+            </label>
+        </div>
+                                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Free wifi
+            </label>
+        </div>
+    </div><br>
+
+
+          <label><b class="side-bar">Fitness Options</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="ballet" name="option1" value="Ballet">Gyms
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="kathak" name="option1" value="Kathak">Yoga
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Zumba
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Fitness Studio
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Pilates
+            </label>
+        </div>
+                        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Cross Functional Training
+            </label>
+        </div>
+                        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">MMA and Kick Boxing
+            </label>
+        </div>
+                        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Dance
+            </label>
+        </div>
+                        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Spinning and Indoor Cycling
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Marathon Training
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Swimming
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Luxury Hotels
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Aerial Fitness
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Pre Natal Classes
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Kids Fitness
+            </label>
+        </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Aqua Fitness
+            </label>
+        </div>
+    </div><br>
+
+              <label><b class="side-bar">Options</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="ballet" name="option1" value="Ballet">Free Trial
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="kathak" name="option1" value="Kathak">Group Classes
+            </label>
+        </div>
+              
+          <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Sunday Open
+            </label>
+        </div>
+          <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Women Friendly
+            </label>
+        </div>
+    </div><br>
+
+                  <label><b class="side-bar">Membership</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="ballet" name="option1" value="Ballet">Hourly
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="kathak" name="option1" value="Kathak">Daily
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Weekly
+            </label>
+        </div>
+                <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="breakDance" name="option1" value="Break Dance">Monthly
+            </label>
+        </div>
+    </div><br>
+<!--    <label><b class="side-bar">Filters</b></label>-->
+<!--    <div class="check">-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="freeTrial">-->
+<!--                <input type="checkbox" class="form-check-input" id="freeTrial" name="option2" value="Free Trial">Free-->
+<!--                Trial-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="groupClasses">-->
+<!--                <input type="checkbox" class="form-check-input" id="groupClasses" name="option2"-->
+<!--                       value="Group Classes">Group Classes-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="lockerShower">-->
+<!--                <input type="checkbox" class="form-check-input" id="lockerShower" name="option2"-->
+<!--                       value="Locker and Shower Facilities">Locker and Shower Facilities-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="parking">-->
+<!--                <input type="checkbox" class="form-check-input" id="parking" name="option2" value="Parking">Parking-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="personalTraining">-->
+<!--                <input type="checkbox" class="form-check-input" id="personalTraining" name="option2"-->
+<!--                       value="Personal Training">Personal Training-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="sundayOpen">-->
+<!--                <input type="checkbox" class="form-check-input" id="sundayOpen" name="option2"-->
+<!--                       value="Sunday Open">Sunday Open-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div><br>-->
+<!--    <label><b class="side-bar">Locations</b></label>-->
+<!--    <div class="check">-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="bilekahalli">-->
+<!--                <input type="checkbox" class="form-check-input" id="bilekahalli" name="option3"-->
+<!--                       value="Bilekahalli">Bilekahalli-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label">-->
+<!--                <input type="checkbox" class="form-check-input" id="silkBoard" name="option3" value="Silk Board">Silk-->
+<!--                Board-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="koramangala">-->
+<!--                <input type="checkbox" class="form-check-input" id="koramangala" name="option3"-->
+<!--                       value="Koramangala">Koramangala-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="hsr">-->
+<!--                <input type="checkbox" class="form-check-input" id="hsr" name="option3" value="HSR">HSR-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="btm">-->
+<!--                <input type="checkbox" class="form-check-input" id="btm" name="option3" value="BTM">BTM Layout-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>

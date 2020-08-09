@@ -1,0 +1,102 @@
+{
+  "publicID": "Hello world",
+  "title": "HOLA Dance studio",
+  "spaceName": "Hola Dance Studio",
+  "domain": "Dance",
+  "brand": {
+    "publicId": "Hello worlds",
+    "brandTitle": "HOLA Dance studio",
+    "brandName": "Hola dance studio",
+    "brandLogo": "imageLink",
+    "phoneNo": 9606698912,
+    "officePhoneNo": 9606698912,
+    "brandDescription": "some description of fundaspaces. its really great though",
+    "brandSpaceCount": 2,
+    "brandAddress": {
+      "flatDetails": "233 - shivaji nagar",
+      "floorNo": "2rd floor",
+      "buildingDetails": "building name",
+      "streetDetails": "mahatma gandhi road",
+      "cityName": "Mumbai",
+      "pinCode": 590006,
+      "landmark": "opposite to amul milk",
+      "stateName": "Maharashtra",
+      "country": "India",
+      "gpsLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.851626798222!2d77.62558331484917!3d12.917256219563313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f382d56693%3A0x2da473ecbbaf95f1!2sFunda%20Spaces!5e0!3m2!1sen!2sin!4v1594478108552!5m2!1sen!2sin"
+    }
+  },
+  "spaceCategories": {
+    "dance": ["Ballet", "Kathak", "Break Dance"]
+  },
+  "address": {
+    "flatDetails": "233 - shivaji nagar",
+    "floorNo": "2rd floor",
+    "buildingDetails": "building name",
+    "streetDetails": "mahatma gandhi road",
+    "cityName": "Mumbai",
+    "pinCode": 590006,
+    "landmark": "opposite to amul milk",
+    "stateName": "Maharashtra",
+    "country": "India",
+    "gpsLocation": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.851626798222!2d77.62558331484917!3d12.917256219563313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f382d56693%3A0x2da473ecbbaf95f1!2sFunda%20Spaces!5e0!3m2!1sen!2sin!4v1594478108552!5m2!1sen!2sin"
+  },
+  "priceStructure": {
+    "dance": [{
+      "slot": {
+        "start": 1594479463264,
+        "end": 1594479463264
+      },
+      "day":"monday",
+      "danceStyle":"Ballet",
+      "description":"great place.",
+      "classLink":"some random link",
+      "price":500
+    }]
+  },
+  "description": "great place.",
+  "rules": "random rules",
+  "policies": "some policies",
+  "openHours": {
+    "isTwentyFourSeven": true,
+    "monday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    },
+    "tuesday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    },
+    "wednesday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    },
+    "thursday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    },
+    "friday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    },
+    "saturday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    },
+    "sunday": {
+      "isOpen": true,
+      "start": 1594479463264,
+      "end": 1594479463264
+    }
+  },
+  "amenities": {
+    "dance": ["Locker and Shower Facilities", "Music Speakers", "Open on Sundays", "Free Trial"]
+  },
+  "covidGuidelines": [0, 2, 3]
+
+}

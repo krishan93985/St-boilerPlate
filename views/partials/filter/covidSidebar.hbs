@@ -1,0 +1,221 @@
+<script src='/javascripts/filter/covid.js'></script>
+<div class="sidenav" id="mySidenav">
+    <div class="row sticky-top">
+        <div class="col-6"><label><b class="side-bar" style="font-size: 24px;">Filter</b></label></div>
+        <div class="col-5"> <button type="button" id="filterApplied" class="btn filter-btn"><b>Apply</b></button>
+        </div>
+        <div class="col-xs-2" id="xbtn"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <br><br>
+    <label><b class="side-bar">Space Type</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="isolationWard" name="option1" value="Isolation Ward">Isolation Ward
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="quarantineCenter" name="option1" value="Quarantine Center">Quarantine Center
+            </label>
+        </div>
+
+    </div>
+    <br>
+    <label><b class="side-bar">BMC Wards</b> <label class="clear-all">Clear All</label></label>
+    <div class="check">
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardA" name="option2" value="A">Ward A
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardB" name="option2" value="B">Ward B
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardC" name="option2" value="C">Ward C
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardD" name="option2" value="D">Ward D
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardE" name="option2" value="E">Ward E
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardFNorth" name="option2" value="F North">Ward F North
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardFSouth" name="option2" value="F South">Ward F South
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardGNorth" name="option2" value="G North">Ward G North
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardGSouth" name="option2" value="G South">Ward G South
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardHEast" name="option2" value="H East">Ward H East
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardHWest" name="option2" value="H West">Ward H West
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardKEast" name="option2" value="K East">Ward K East
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardKWest" name="option2" value="K West">Ward K West
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardL" name="option2" value="L">Ward L
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardMEast" name="option2" value="M East">Ward M East
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardMWest" name="option2" value="M West">Ward M West
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardN" name="option2" value="N">Ward N
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardPNorth" name="option2" value="P North">Ward P North
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardPSouth" name="option2" value="P South">Ward P South
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardRNorth" name="option2" value="R North">Ward R North
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardRSouth" name="option2" value="R South">Ward R South
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardRCentral" name="option2" value="R Central">Ward R Central
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardS" name="option2" value="S">Ward S
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" id="wardT" name="option2" value="T">Ward T
+            </label>
+        </div>
+    </div>
+    <br>
+<!--    <label><b class="side-bar">Filters</b></label>-->
+<!--    <div class="check">-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="freeTrial">-->
+<!--                <input type="checkbox" class="form-check-input" id="freeTrial" name="option2" value="Free Trial">Free-->
+<!--                Trial-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="groupClasses">-->
+<!--                <input type="checkbox" class="form-check-input" id="groupClasses" name="option2"-->
+<!--                       value="Group Classes">Group Classes-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="lockerShower">-->
+<!--                <input type="checkbox" class="form-check-input" id="lockerShower" name="option2"-->
+<!--                       value="Locker and Shower Facilities">Locker and Shower Facilities-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="parking">-->
+<!--                <input type="checkbox" class="form-check-input" id="parking" name="option2" value="Parking">Parking-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="personalTraining">-->
+<!--                <input type="checkbox" class="form-check-input" id="personalTraining" name="option2"-->
+<!--                       value="Personal Training">Personal Training-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="sundayOpen">-->
+<!--                <input type="checkbox" class="form-check-input" id="sundayOpen" name="option2"-->
+<!--                       value="Sunday Open">Sunday Open-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div><br>-->
+<!--    <label><b class="side-bar">Locations</b></label>-->
+<!--    <div class="check">-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="bilekahalli">-->
+<!--                <input type="checkbox" class="form-check-input" id="bilekahalli" name="option3"-->
+<!--                       value="Bilekahalli">Bilekahalli-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label">-->
+<!--                <input type="checkbox" class="form-check-input" id="silkBoard" name="option3" value="Silk Board">Silk-->
+<!--                Board-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="koramangala">-->
+<!--                <input type="checkbox" class="form-check-input" id="koramangala" name="option3"-->
+<!--                       value="Koramangala">Koramangala-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="hsr">-->
+<!--                <input type="checkbox" class="form-check-input" id="hsr" name="option3" value="HSR">HSR-->
+<!--            </label>-->
+<!--        </div>-->
+<!--        <div class="form-check">-->
+<!--            <label class="form-check-label" for="btm">-->
+<!--                <input type="checkbox" class="form-check-input" id="btm" name="option3" value="BTM">BTM Layout-->
+<!--            </label>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>

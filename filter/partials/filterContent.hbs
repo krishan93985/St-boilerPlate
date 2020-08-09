@@ -1,0 +1,111 @@
+<label for="city"></label><input id="city" style="display: none" value="{{details.city}}">
+
+<div id="initialRes">
+     <div class="row">
+                        <div class="col-sm-2 col-md-2 col-lg-2 col-xl-4 imageDiv">
+                            <img src="/images//filter/hola1.png" id="card-photo">
+                        </div>
+                        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-8" id="content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="cardHeading"><b>HOLA Dance Studio</b></h5>
+                                    <div class = "textHeading"> Near Skypool Fitness</div>
+                                </div>
+                                <div class="col-lg-6">
+                                        <span class="badge badge-info badgeSize">Virtual Class</span>
+                                </div>
+                            </div><br>
+                            <div class="row justify-content-start">
+                                <div class="col-sm-4 col-lg-4 col-md-4 rateandreview">
+                                    <div id="rating">
+                                        <div id="stars">
+                                            4.0 <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    {{!-- <div id="reviews" style="font-size:10px;">(1 Review)</div> --}}
+                                </div>
+                                <div class="col-sm-4 col-lg-4 col-md-4 amenities">
+                                    <ul>
+                                        <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> &nbsp Urban</li>
+            <!--                            <li><i class="fas fa-shoe-prints" aria-hidden="true"></i>&nbsp Wifi Available</li>-->
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4 col-lg-4 col-md-4 amenities">
+                                    <ul>
+                                        <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> &nbsp Hip Hop</li>
+            <!--                            <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> &nbsp Parking Available</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-2 col-6 col-md-6 col-lg-1 flexStart" id="month"><span>Per Hour</span></div>
+                                <div class="col-sm-4 col-6 col-md-6 col-lg-4 flexCenter" id="money"><b>₹ <span
+                                        style="color:#d81b60">1200</span></b></div>
+                                <div class="col-sm-3 col-12 col-md-12 col-lg-6 flexStart">
+                                    <form action="/map/dance/5ed662287fd1870a4852be54">
+                                        <button type="submit" formtarget="_blank" class="btn btn-primary" id="view-details">View Details</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <br><br>
+</div>
+
+<div id="filterRes" style="display: none">
+
+</div>
+
+<script id="result-template" type="text/x-handlebars-template">
+   \{{#each searchResults}}
+        <div class="row">
+            <div class="col-sm-2 col-md-2 col-lg-2 col-xl-4 imageDiv">
+                <img src="../../images/index/filter/hola1.png" id="card-photo">
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10 col-xl-8" id="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5><b>\{{this.title}}</b></h5>
+                        \{{this.address.landmark}}
+                    </div>
+                    <div class="col-lg-6">
+                        \{{#each this.tags}}
+                            <span class="badge badge-info">\{{this}}</span>
+                        \{{/each}}
+                    </div>
+                </div><br>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2 rateandreview">
+                        <div id="rating">
+                            <div id="stars">
+                                4.1 <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div id="reviews" style="font-size:10px;">(19 Review)</div>
+                    </div>
+                    <div class="col-sm-5 amenities">
+                        <ul>
+                            <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> &nbsp Urban</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5 amenities">
+                        <ul>
+                            <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> &nbsp Hip Hop</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-6 col-md-6 col-lg-1 flexCenter" id="month"><span>Per Hour</span></div>
+                    <div class="col-sm-4 col-6 col-md-6 col-lg-4 flexCenter" id="money"><b>₹ <span
+                            style="color:#d81b60">\{{this.priceStructure.hourly}}</span></b></div>
+                    <div class="col-sm-3 col-12 col-md-12 col-lg-6 flexCenter">
+                        <form action="/map/dance/\{{this.publicID}}">
+                            <button type="submit" formtarget="_blank" class="btn btn-primary" id="view-details">View Details</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    \{{/each}}
+    <br><br>
+ </script>

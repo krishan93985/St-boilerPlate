@@ -1,0 +1,904 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/timePicker/css/bootstrap-material-datetimepicker.css">
+<script src="/timePicker/js/bootstrap-material-datetimepicker.js" charset="utf-8"></script>
+
+
+<link rel="stylesheet" href="/stylesheets/automation/automation.css">
+<script src="/js/automation/automation.js"></script>
+
+
+
+<div class = "background row" >
+    <div class="col-lg-6 col-md-12 col-12 heading">
+    <h1 class="heading">Automation Process Prototype</h1>
+    </div>
+    
+    <div class="col-lg-6 col-md-12 col-12 covidImage">
+    <div class="imageContainer">
+        <img src="/images/automation.png" alt="covidimage" class="image">
+</div>
+</div>
+</div>
+
+<div class="progressbarWrapper">
+    <div class="progressBar">
+        <div id="dot1" class="dot step"></div>
+        <div id="dot2" class="dot step"></div>
+        <div id="dot3" class="dot step"></div>
+        <div id="dot4" class="dot step"></div>
+        <div id="dot5" class="dot step"></div>
+        <div class="progress"></div>
+    </div>
+</div>
+
+
+<div class="container-fluid" style="margin-bottom: 2rem;">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-11 col-md-9 col-lg-8">
+            <form id="regForm" action="/automationForm" method="POST" >
+                <!-- One "tab" for each step in the form: -->
+                {{!-- <div class="tab">Space Info:
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Space Title</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter Title">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Description">
+                    </div>
+                </div> --}}
+                 <div class="tab">
+                    <h3 class="">Brand Info:</h3>
+                    <div class="row">
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandTitle">Brand Title:</label>
+                            <input class="aForm required" placeholder="Brand Title..." oninput="this.className = 'aForm'" id="brandTitle">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandName">Brand Name:</label>
+                            <input class="aForm required" placeholder="Brand Name..." oninput="this.className = 'aForm'" id="brandName">
+                        </div>
+                        <div class="col-12  aFormGroup">
+                            <label for="brandLogo">Brand Logo:</label>
+                            <input type="file" class="required" id="brandLogo">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="brandEmail">Email address:</label>
+                            <input type="email" class="aForm" placeholder="Email Address..."
+                                oninput="this.className = 'aForm'" id="brandEmail">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandPhone">Phone Number:</label>
+                            <input type="number" class="aForm required" placeholder="Phone Number..."
+                                oninput="this.className = 'aForm'" id="phoneNo">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandOfficePhone">Office Contact Number:</label>
+                            <input type="number" class="aForm required" placeholder="Office Contact Number..."
+                                oninput="this.className = 'aForm'" id="officePhoneNo">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label class="textareaLabel" for="brandDescription">Brand Description:</label>
+                            <textarea id="brandDescription" class="aForm" placeholder="Description..."
+                                oninput="this.className = 'aForm'" id="brandAddress"></textarea>
+                        </div>
+
+                    </div>
+                    <h3 class="">Brand Location:</h3>
+                    <div class="row">
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandflatDetails">Flat Details:</label>
+                            <input class="aForm" id="brandflatDetails" placeholder="Flat Details..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandfloorDetails">Floor Details:</label>
+                            <input class="aForm" id="brandfloorDetails" placeholder="Floor Details..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="brandbuildingDetails">Building Details:</label>
+                            <input class="aForm required" id="brandbuildingDetails" placeholder="Building Details..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label class="textareaLabel" for="brandstreetDetails">Street Details:</label>
+                            <textarea id="brandstreetDetails" class="aForm" placeholder="Street Details..."
+                                oninput="this.className = 'aForm'" ></textarea>
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandcityName">City Name:</label>
+                            <input class="aForm required" id="brandcityName" placeholder="City Name..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandpincode">Pincode:</label>
+                            <input class="aForm required" id="brandpincode" placeholder="Pincode..."
+                                oninput="this.className = 'aForm'" type="number">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="brandlandmark">Landmark:</label>
+                            <input class="aForm" id="brandlandmark" placeholder="Landmark..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandstateName">State Name:</label>
+                            <input class="aForm required" id="brandstateName" placeholder="State Name..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="brandcountry">Country:</label>
+                            <input class="aForm required" id="brandcountry" placeholder="Country..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="brandgpsLocation">GPS Location:</label>
+                            <input class="aForm required" id="brandgpsLocation" placeholder="Enter a google maps link..."
+                                oninput="this.className = 'aForm'" >
+                        </div>
+                        <div class="col-12 aFormGroup">
+                           <label for="spaceCount">How many spaces would like to list with us?:</label>
+                        <input id="spaceCount" type="number" class="aForm required" placeholder="1"
+                                oninput="this.className = 'aForm'" value="1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h3 class="">Space Info:</h3>
+                    <div class="row">
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="spaceTitle">Space Title:</label>
+                            <input name="title" type="text" id="spaceTitle" class="aForm required" placeholder="Title..." oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="title">Space Name:</label>
+                            <input name="spaceName" type="text" id="spaceName" class="aForm required" placeholder="Name..." oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="spacename" value="1">
+                                <label class="custom-control-label" for="spacename">Space Name is same as Space Title.</label>
+                            </div>
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label class="textareaLabel" for="description">Space Description:</label>
+                            <textarea name="description" type="text" id="description" class="aForm" placeholder="Description..."
+                                oninput="this.className = 'aForm'"></textarea>
+                        </div>
+                        <div class="col-12 aFormGroup required">
+                            <label for="domain">Space Type:</label>
+                            <select name="spaceType" id="spaceType">
+                                <option value="0">Space Type</option>
+                                <option value="coworking">Co-Working space</option>
+                                <option value="coliving">Co-Living space</option>
+                                <option value="gym">Gym</option>
+                                <option value="dance">Dance Studio</option>
+                                <option value="pet">Pet Studio</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label class="textareaLabel" for="rules">Rules:</label>
+                            <textarea name="rules" type="text" class="aForm required" id="rules" placeholder="Rules..."
+                                oninput="this.className = 'aForm'"></textarea>
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label class="textareaLabel" for="policies">Policies:</label>
+                            <textarea name="policies" type="text" class="aForm required" id="policies" placeholder="Policies..."
+                                oninput="this.className = 'aForm'"></textarea>
+                        </div>
+                        <div class="col-12  aFormGroup">
+                            <label for="mainImage">Main Image:</label>
+                            <input name="mainImage" type="file" id="mainImage">
+                        </div>
+                        <div class="col-12  aFormGroup">
+                            <label for="otherImages">Other Images:</label>
+                            <input name="otherImages" type="file" multiple id="otherImages">
+                        </div>
+                        <div class="aFormGroup col-12 pb-3">
+                            <label for="">Open Hours:</label>
+                            <div class="custom-control custom-checkbox ">
+                                <input type="checkbox" class="custom-control-input" id="twentyfourseven" value="1">
+                                <label class="custom-control-label required" for="twentyfourseven">24 ✖️ 7</label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="monday">
+                                <label class="custom-control-label d-flex" for="monday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Monday:
+                                        </div>
+                                        <div class="timePickerWrapper">
+                                            <input name="start" id="monStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="monEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="tuesday">
+                                <label class="custom-control-label d-flex" for="tuesday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Tuesday:
+                                        </div>
+                                        <div class="timePickerWrapper ml-auto">
+                                            <input name="start" id="tueStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="tueEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="wednesday">
+                                <label class="custom-control-label d-flex" for="wednesday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Wednesday:
+                                        </div>
+                                        <div class="timePickerWrapper ml-auto">
+                                            <input name="start" id="wedStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="wedEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="thursday">
+                                <label class="custom-control-label d-flex" for="thursday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Thursday:
+                                        </div>
+                                        <div class="timePickerWrapper ml-auto">
+                                            <input name="start" id="thuStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="thuEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="friday">
+                                <label class="custom-control-label d-flex" for="friday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Friday:
+                                        </div>
+                                        <div class="timePickerWrapper ml-auto">
+                                            <input name="start" id="friStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="friEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="saturday">
+                                <label class="custom-control-label d-flex" for="saturday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Saturday:
+                                        </div>
+                                        <div class="timePickerWrapper ml-auto">
+                                            <input name="start" id="satStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="satEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="custom-control custom-checkbox ohCheck ">
+                                <input name="isOpen" type="checkbox" class="custom-control-input openHoursDay" id="sunday">
+                                <label class="custom-control-label d-flex" for="sunday">
+                                    <div class="openHoursWrapper">
+                                        <div class="required">
+                                            Sunday:
+                                        </div>
+                                        <div class="timePickerWrapper ml-auto">
+                                            <input name="start" id="sunStart" value="" class="timePicker required" type="text"> to <input
+                                               name="end" id="sunEnd" value="" class="timePicker required" type="text">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h3 class="">Space Location Info:</h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="custom-control custom-checkbox">
+                                <input name="sameaddress" type="checkbox" class="custom-control-input" id="sameaddress" value="1">
+                                <label class="custom-control-label" for="sameaddress">Brand address and space address
+                                    are the same.</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="flatDetails">Flat Details:</label>
+                            <input name="flatdetails" type="text" class="aForm required" id="flatDetails" placeholder="Flat Details..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="floorDetails">Floor Details:</label>
+                            <input name="floorNo" type="text" class="aForm" id="floorDetails" placeholder="Floor Details..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="buildingDetails">Building Details:</label>
+                            <input name="buildingDetails" type="text" class="aForm" id="buildingDetails" placeholder="Building Details..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label class="textareaLabel" for="streetDetails">Street Details:</label>
+                            <textarea name="streetDetails" type="text" id="streetDetails" class="aForm" placeholder="Street Details..."
+                                oninput="this.className = 'aForm'"></textarea>
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="cityName">City Name:</label>
+                            <input name="cityName" type="text" class="aForm required" id="cityName" placeholder="City Name..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="pincode">Pincode:</label>
+                            <input name="pinCode" type="number" class="aForm required" id="pincode" placeholder="Pincode..."
+                                oninput="this.className = 'aForm'" type="number">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="landmark">Landmark:</label>
+                            <input name="landmark" type="text" class="aForm" id="landmark" placeholder="Landmark..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="stateName">State Name:</label>
+                            <input name="stateName" type="text" class="aForm required" id="stateName" placeholder="State Name..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 col-md-6 aFormGroup">
+                            <label for="country">Country:</label>
+                            <input name="country" type="text" class="aForm required" id="country" placeholder="Country..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                        <div class="col-12 aFormGroup">
+                            <label for="gpsLocation">GPS Location:</label>
+                            <input name="gpsLocation" type="text" class="aForm required" id="gpsLocation" placeholder="Enter a google maps link..."
+                                oninput="this.className = 'aForm'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <h3 class="">Space Features:</h3>
+                    <div class="row">
+                        <div class="col-12 aFormGroup noInputResize">
+                            <h4>Amenities:</h4>
+                            <div class="row mb-4 amenitiesContainer">
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="amenities" type="checkbox" class="custom-control-input" id="parkingFacility"
+                                            value="Parking Facility">
+                                        <label class="custom-control-label" for="parkingFacility">Parking
+                                            Facility</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="Wifi" type="checkbox" class="custom-control-input" id="freeWifi"
+                                            value="Free Wifi">
+                                        <label class="custom-control-label" for="freeWifi">Free Wifi</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="Wifi" type="checkbox" class="custom-control-input" 
+                                            value="Free Wifi">
+                                        <label class="custom-control-label" for="Wifi"> Wifi</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input name="" type="checkbox" class="custom-control-input" id="cardPayment"
+                                            value="Card Payment">
+                                        <label class="custom-control-label" for="cardPayment">Card Payment</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="elevator"
+                                            value="Elevator">
+                                        <label class="custom-control-label" for="elevator">Elevator</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="attachedBathroom"
+                                            value="Attached Bathroom">
+                                        <label class="custom-control-label" for="attachedBathroom">Attached
+                                            Bathroom</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="furniture"
+                                            value="Furniture">
+                                        <label class="custom-control-label" for="furniture">Furniture</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="internet"
+                                            value="Internet">
+                                        <label class="custom-control-label" for="internet">Internet</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="wifi"
+                                            value="Wifi">
+                                        <label class="custom-control-label" for="wifi">Wifi</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="leasedLine"
+                                            value="Leased Line">
+                                        <label class="custom-control-label" for="leasedLine">Leased Line</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="locker"
+                                            value="Locker">
+                                        <label class="custom-control-label" for="locker">Locker</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="printScanCopy"
+                                            value="Print/Scan/Copy">
+                                        <label class="custom-control-label" for="printScanCopy">Print/Scan/Copy</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="2wparking"
+                                            value="2 W Parking">
+                                        <label class="custom-control-label" for="2wparking">2 W Parking</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="4wparking"
+                                            value="4 W Parking">
+                                        <label class="custom-control-label" for="4wparking">4 W Parking</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="WhiteBoard" value="White Board">
+                                        <label class="custom-control-label" for="WhiteBoard">White Board</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Pantry" value="Pantry">
+                                        <label class="custom-control-label" for="Pantry">Pantry</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Reception" value="Reception">
+                                        <label class="custom-control-label" for="Reception">Reception</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Lift" value="Lift">
+                                        <label class="custom-control-label" for="Lift">Lift</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="AC" value="AC">
+                                        <label class="custom-control-label" for="AC">AC</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="teaCoffee"
+                                            value="Tea/Coffee">
+                                        <label class="custom-control-label" for="teaCoffee">Tea/Coffee</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="projectorTv"
+                                            value="Projector/TV">
+                                        <label class="custom-control-label" for="projectorTv">Projector/TV</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="powerBackup"
+                                            value="Power Backup">
+                                        <label class="custom-control-label" for="powerBackup">Power Backup</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="securityCCTV"
+                                            value="Security/CCTV">
+                                        <label class="custom-control-label" for="securityCCTV">Security/CCTV</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="lockerShower"
+                                            value="Locker and Shower Facilities">
+                                        <label class="custom-control-label" for="lockerShower">Locker and Shower
+                                            Facilities</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="musicSpeakers"
+                                            value="Music Speakers">
+                                        <label class="custom-control-label" for="musicSpeakers">Music Speakers</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="openOnSundays"
+                                            value="Open on Sundays">
+                                        <label class="custom-control-label" for="openOnSundays">Open on Sundays</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cardioEquipment"
+                                            value="Cardio Equipment">
+                                        <label class="custom-control-label" for="cardioEquipment">Cardio
+                                            Equipment</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="personalTrainer"
+                                            value="Personal Trainer">
+                                        <label class="custom-control-label" for="personalTrainer">Personal
+                                            Trainer</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="outdoorPlay" value="Outdoor Play Area">
+                                        <label class="custom-control-label" for="outdoorPlay">Outdoor Play Area</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="indoorPlay" value="Indoor Play Area">
+                                        <label class="custom-control-label" for="indoorPlay">Indoor Play Area</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="swimmingPool" value="Swimming Pool">
+                                        <label class="custom-control-label" for="swimmingPool">Swimming Pool</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="park" value="Park">
+                                        <label class="custom-control-label" for="park">Park</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="petCam" value="24x7 Pet Cam Access">
+                                        <label class="custom-control-label" for="petCam">24x7 Pet Cam Access</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="pickUp" value="Pick and Drop Service">
+                                        <label class="custom-control-label" for="pickUp">Pick and Drop Service</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 aFormGroup noInputResize">
+                            <h4>Multipurpose Tags:</h4>
+                            <div class="row mb-4">
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="photoShoot"
+                                            value="Photo Shoot">
+                                        <label class="custom-control-label" for="photoShoot">Photo Shoot</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="tuition"
+                                            value="Tuition">
+                                        <label class="custom-control-label" for="tuition">Tuition</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="virtualClass"
+                                            value="Virtual Class">
+                                        <label class="custom-control-label" for="virtualClass">Virtual Class</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="legalPurposes"
+                                            value="Legal Purposes">
+                                        <label class="custom-control-label" for="legalPurposes">Legal Purposes</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="locationShoot"
+                                            value="Location Shoot">
+                                        <label class="custom-control-label" for="locationShoot">Location Shoot</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="events" value="Events">
+                                        <label class="custom-control-label" for="events">Events</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 aFormGroup noInputResize">
+                            <h4>Categories:</h4>
+                            <div class="row mb-4 categoriesContainer">
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Homestay"
+                                            value="Homestay">
+                                        <label class="custom-control-label" for="Homestay">Homestay</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Hostel" value="Hostel">
+                                        <label class="custom-control-label" for="Hostel">Hostel</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="House" value="House">
+                                        <label class="custom-control-label" for="House">House</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Hotel" value="Hotel">
+                                        <label class="custom-control-label" for="Hotel">Hotel</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="PG" value="PG">
+                                        <label class="custom-control-label" for="PG">PG</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 colivingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Flat" value="Flat">
+                                        <label class="custom-control-label" for="Flat">Flat</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="privateRoom"
+                                            value="Private Room">
+                                        <label class="custom-control-label" for="privateRoom">Private Room</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="openDesk"
+                                            value="Open Desk">
+                                        <label class="custom-control-label" for="openDesk">Open Desk</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="eventSpace"
+                                            value="Event Space">
+                                        <label class="custom-control-label" for="eventSpace">Event Space</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="virtualSpace"
+                                            value="Virtual Space">
+                                        <label class="custom-control-label" for="virtualSpace">Virtual Space</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="meetingSpace"
+                                            value="Meeting Space">
+                                        <label class="custom-control-label" for="meetingSpace">Meeting Space</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 coworkingCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="trainingSpace"
+                                            value="Training Space">
+                                        <label class="custom-control-label" for="trainingSpace">Training Space</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="ballet" value="Ballet">
+                                        <label class="custom-control-label" for="ballet">Ballet</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="kathak" value="Kathak">
+                                        <label class="custom-control-label" for="kathak">Kathak</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="breakDance"
+                                            value="Break Dance">
+                                        <label class="custom-control-label" for="breakDance">Break Dance</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="lionDance"
+                                            value="Lion Dance">
+                                        <label class="custom-control-label" for="lionDance">Lion Dance</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="tapDance"
+                                            value="Tap Dance">
+                                        <label class="custom-control-label" for="tapDance">Tap Dance</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="salsa" value="Salsa">
+                                        <label class="custom-control-label" for="salsa">Salsa</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 danceCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="bellyDance"
+                                            value="Belly Dance">
+                                        <label class="custom-control-label" for="bellyDance">Belly Dance</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="Zumba" value="Zumba">
+                                        <label class="custom-control-label" for="Zumba">Zumba</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="fitnessStudio"
+                                            value="Fitness Studio">
+                                        <label class="custom-control-label" for="fitnessStudio">Fitness Studio</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="mma"
+                                            value="MMA and Kick Boxing">
+                                        <label class="custom-control-label" for="mma">MMA and Kick Boxing</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="strengthTraining"
+                                            value="Strength Training">
+                                        <label class="custom-control-label" for="strengthTraining">Strength
+                                            Training</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="crossFunctionalTraining"
+                                            value="Cross Functional Training">
+                                        <label class="custom-control-label" for="crossFunctionalTraining">Cross
+                                            Functional Training</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="kidsFitness"
+                                            value="Kids Fitness">
+                                        <label class="custom-control-label" for="kidsFitness">Kids Fitness</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="spinning"
+                                            value="Spinning">
+                                        <label class="custom-control-label" for="spinning">Spinning</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="massages"
+                                            value="Massages">
+                                        <label class="custom-control-label" for="massages">Massages</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 gymCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cardio" value="Cardio">
+                                        <label class="custom-control-label" for="cardio">Cardio</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="adoption" value="Adoption">
+                                        <label class="custom-control-label" for="adoption">Adoption</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="boarding" value="Boarding">
+                                        <label class="custom-control-label" for="boarding">Boarding</label>
+                                    </div>
+                                </div>
+                                <div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="doggieDaycare" value="Doggie Daycare">
+                                        <label class="custom-control-label" for="doggieDaycare">Doggie Daycare</label>
+                                    </div>
+                                </div><div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="socialize" value="Socializing">
+                                        <label class="custom-control-label" for="socialize">Socializing</label>
+                                    </div>
+                                </div><div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="petParties" value="Pet Parties">
+                                        <label class="custom-control-label" for="petParties">Pet Parties</label>
+                                    </div>
+                                </div><div class="col-auto px-4 py-2 petCheck spaceTag">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="cardio" value="Cardio">
+                                        <label class="custom-control-label" for="cardio">Cardio</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <h3 class="">Payment Structure and Packages</h3>
+                    {{>coworkingPackage}}
+                    {{>dancePaymentStructure}}
+                    {{>gymPaymentStructure}}
+                    {{>petPaymentStructure}}
+                </div>
+
+                <div style="overflow:auto;">
+                    <div style="float:right;">
+                        <button class="formBtn" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                        <button class="formBtn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

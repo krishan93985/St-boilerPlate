@@ -1,0 +1,31 @@
+.calenderDisplay{
+    display: none;
+    
+}
+
+.calenderColor{
+    background-color: #4dd0e1;
+    border-radius: 100px;
+    color: #fff;
+}
+
+.js-range-slider {
+    padding-left: 5px;
+    
+}
+
+.calenderDay{
+    cursor: pointer;
+}
+
+.car-height{
+    height: 28rem !important;
+    display: flex;
+}
+.schedule-booking{
+    width: 38vw !important;
+}
+.container-fluid{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}

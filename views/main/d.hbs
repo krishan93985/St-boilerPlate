@@ -1,0 +1,1142 @@
+<link rel='stylesheet' href='/stylesheets/petMap/map/offersCard.css' />
+<link rel='stylesheet' href='/stylesheets/petMap/map/offersCarouselStyle.css' />
+
+<!--Check for similarities with Dance Map Page-->
+<!--<link rel='stylesheet' href='/stylesheets/CoworkingMap2.css'/>-->
+<!---->
+<link rel='stylesheet' href='/stylesheets/petMap/danceMap/map.css' />
+<link rel='stylesheet' href='/stylesheets/singleslider.css' />
+<link rel='stylesheet' href='/stylesheets/petMap/danceMap/gCar.css' />
+
+<link rel='stylesheet' href='/stylesheets/petMap/danceMap/package.css' />
+
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="/stylesheets/petMap/danceMap/flickity.css">
+<link rel="stylesheet" href="/stylesheets/index/carousel/flickity/flickity.min.css">
+<script src="/stylesheets/index/carousel/flickity/flickity.pkgd.min.js"></script>
+<!--<script src="../../javascripts/danceMap/mapReview.js" charset="utf-8"></script>-->
+<script src="/js/danceMap/map2.js" charset="utf-8"></script>
+<script src="/js/danceMap/gCar.js" charset="utf-8"></script>
+
+<link rel="stylesheet" href="/stylesheets/virtualClass/mobiscroll.javascript.min.css">
+<script src="js/virtualclass/mobiscroll.javascript.min.js"></script>
+
+
+
+<link href="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.css" rel="stylesheet">
+<script type="text/javascript" src="https://www.bluemagnetinteractive.com/shotgun/date/fecha.js"></script>
+<script type="text/javascript"
+    src="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.min.js"></script>
+<!--<link rel="stylesheet" href="../../stylesheets/header1.css">-->
+
+<style>
+    .row {
+        margin-left: 0px;
+    }
+
+    .left-column {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        padding-top: 3rem !important;
+        padding-bottom: 0;
+    }
+
+    @media (max-width:992px) {
+        .description {
+            margin-top: 60px;
+        }
+    }
+</style>
+
+
+
+
+<div class="row left-column">
+    <div class="col-lg-6 ">
+        <h4><b class="title">{{space.title}}</b></h4>
+        <div class="desc1 col-md-6" style="padding:0;margin:0; max-width:100% !important">
+            <i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+            {{space.address.flatDetails}}
+            {{space.address.floorNo}}
+            {{space.address.buildingDetails}}
+            {{space.address.streetDetails}}
+            {{space.address.cityName}} - {{space.address.pinCode}}
+            {{space.address.landmark}}
+            {{space.address.stateName}}
+            {{space.address.country}}
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-2 col-md-6 col-6">
+                <img src="/images/danceMap/covidShield2.png" alt="">
+            </div>
+            <div class="col-lg-10 col-md-6 col-6" id="domain">
+                <div class="col-lg-12 col-md-12 col-12">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4> <b>Domain</b> </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 ">
+                            <h4 style="border: solid 1px; display : inline-block; border-radius:5px; padding:1rem">
+                                {{space.domain}}</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-6 left-column">
+        <div class="carousel carousel-main carouselBottom" data-flickity='{"fade": true, "fullscreen": true }'>
+            <img class="carousel-cell ch main-carousel" src="{{space.images.mainImage}}">
+
+            {{#each space.images.otherImages}}
+            <img class="carousel-cell ch" src="{{this}}">
+            {{/each}}
+        </div>
+
+        <div class="carousel carousel-nav carouselHeight"
+            data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false  }'>
+            <img class="carousel-cell" src="{{space.images.mainImage}}" style="margin-right: 10px !important;">
+            {{#each space.images.otherImages}}
+            <img class="carousel-cell" src="{{this}}" style="margin-right: 10px !important;">
+            {{/each}}
+        </div>
+
+    </div>
+
+    <div class="col-12 col-lg-6 titleTop"
+        style="display: flex; justify-content:center;align-items:center; padding:2rem; ">
+
+        <div class="row desc-nearby">
+            <div class="col-lg-12 col-md-12 col-12">
+                <h4><b class="marginLeft">Description</b></h4>
+
+                <p class="description">{{space.description}}
+                </p><br>
+                <div id="map" style="width:100%;">
+
+                    <iframe width="100%" height="100%" src="{{space.address.gpsLocation}}" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+        <br>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="d-flex row tag " style=" margin-top:3rem;">
+        <h4>
+            <b>Multipurpose Tags</b>
+        </h4>
+    </div>
+
+    <div class="d-flex justify-content-center row tag my-1 ">
+
+        <div id="tagsdiv" class="col-lg-12">
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#dance" role="tab"
+                                aria-controls="pills-home" aria-selected="true">Dance</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#trainingRoom"
+                                role="tab" aria-controls="pills-profile" aria-selected="false">Training Room</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#co-working" role="tab"
+                                aria-controls="pills-contact" aria-selected="false">Co-Working</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#co-living" role="tab"
+                                aria-controls="pills-contact" aria-selected="false">Co-living</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#fitness" role="tab"
+                                aria-controls="pills-contact" aria-selected="false">Fitness</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="dance" role="tabpanel"
+                            aria-labelledby="pills-home-tab">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 offers-image">
+                                    <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg"
+                                        style="max-height: 300px;" alt="screenshot">
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="card cardHeight" style="height: 100%;">
+                                        <div class="card-body  carosuelPad">
+                                            <a href="#">
+                                                <div class="tagBtn my-4">
+                                                    <a class="tags">Dance</a>
+                                                </div>
+                                            </a>
+                                            <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                elit. Tenetur, cumque
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="trainingRoom" role="tabpanel"
+                            aria-labelledby="pills-profile-tab">
+                            <div class="tab-pane fade show active" id="dance" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 offers-image">
+                                        <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg"
+                                            alt="screenshot">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="card cardHeight" style="height: 100%;">
+                                            <div class="card-body  carosuelPad">
+                                                <a href="#">
+                                                    <div class="tagBtn my-4">
+                                                        <a class="tags">Training Room</a>
+                                                    </div>
+                                                </a>
+                                                <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                    elit. Tenetur, cumque
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="co-working" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="tab-pane fade show active" id="dance" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 offers-image">
+                                        <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg"
+                                            alt="screenshot">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="card cardHeight" style="height: 100%;">
+                                            <div class="card-body  carosuelPad">
+                                                <a href="#">
+                                                    <div class="tagBtn my-4">
+                                                        <a class="tags">Co-Working</a>
+                                                    </div>
+                                                </a>
+                                                <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                    elit. Tenetur, cumque
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="co-living" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="tab-pane fade show active" id="dance" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 offers-image">
+                                        <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg"
+                                            alt="screenshot">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="card cardHeight" style="height: 100%;">
+                                            <div class="card-body  carosuelPad">
+                                                <a href="#">
+                                                    <div class="tagBtn my-4">
+                                                        <a class="tags">Co-living</a>
+                                                    </div>
+                                                </a>
+                                                <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                    elit. Tenetur, cumque
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fitness" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="tab-pane fade show active" id="dance" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 offers-image">
+                                        <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg"
+                                            alt="screenshot">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="card cardHeight" style="height: 100%;">
+                                            <div class="card-body  carosuelPad">
+                                                <a href="#">
+                                                    <div class="tagBtn my-4">
+                                                        <a class="tags">Fitness</a>
+                                                    </div>
+                                                </a>
+                                                <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                    elit. Tenetur, cumque
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="container">
+
+
+
+    <div class="row" style="margin-top: 4rem;" >
+
+        <div class="col-lg-7 deskCard">
+
+
+            <ul class="nav nav-pills mb-3 justify-content-center nav-fill" id="pills-tab topdiv" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#schedule" role="tab"
+                        aria-controls="pills-home" aria-selected="true">Membership</a>
+                </li>
+
+            </ul>
+            <hr>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="schedule" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                    <h4>
+                        <b>Pricing and Packages</b>
+                    </h4>
+
+
+                    <div class="col-lg-12  col-md-10 my-3 PPmain coworkingMain">
+                        <div class="container-fluid px-0">
+                            <div class="row collapseTrigger uncollapsed pt-3 pb-2 py-md-4 px-2">
+                                <div class="col-12 col-sm-3 col-md-3 d-flex align-items-center packageTitle">
+                                    {{space.priceStructure.pet.[0].petType}}</div>
+                                <div
+                                    class="col-12 col-sm-6 col-md-6 d-flex align-items-center justify-content-start justify-content-md-center">
+                                    Starting from {{space.priceStructure.pet.[0].price}} /
+                                    {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                    {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</div>
+                                <div
+                                    class="col-12 col-sm-3 col-md-3 d-flex align-items-center justify-content-end collapseIcon uncollapsed">
+                                    <i class="fas fa-chevron-up"></i>
+                                </div>
+                            </div>
+                            <div class="container-fluid collapseTarget">
+                                <hr class="mt-0">
+                                <div class="row">
+                                    <div class="col-12 col-md-4 px-2 packageImg">
+
+                                        <div class="carousel" style="background: #EEE;
+  width: 180px; height:160px" data-flickity>
+                                            <div style="width: 100%;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                            <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                            <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                            <div style="width: 160px;
+  height: 160px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: gallery-cell;"></div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12 col-md-8 py-0 d-flex align-items-center">
+                                        <div class="container-fluid px-0 py-3 px-md-3 py-md-2">
+                                            <div class="row">
+                                                <div class="col-12 py-1">
+                                                    <h5>{{space.priceStructure.pet.[0].title}}</h5>
+                                                </div>
+                                                <div class="col-12 py-1">
+                                                    <h6>Description</h6>
+                                                    <p>{{space.priceStructure.pet.[0].description}}</p>
+                                                </div>
+                                                <div class="col-12 py-1">
+                                                    <label for="seatCapacity">Choose seat capacity:</label>
+                                                    <select name="seatCapacity" id="seatCapacity">
+                                                        <option value="20">
+                                                            {{space.priceStructure.pet.[0].seatCapacity}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-12 py-1">
+                                                    <span>Select duration: </span>
+                                                    <div class="duration">{{space.priceStructure.pet.[0].price}} /
+                                                        {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                        {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                    </div>
+                                                    <div class="duration">{{space.priceStructure.pet.[0].price}} /
+                                                        {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                                        {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row d-flex align-items-center justify-content-between pb-3">
+                                    <button class="enquireBtn ml-3">Enquire</button>
+                                    <span class="price mr-3">₹<span
+                                            class="">{{space.priceStructure.pet.[0].price}}</span> /
+                                        {{space.priceStructure.pet.[0].billingInfo.billingDuration }}
+                                        {{ space.priceStructure.pet.[0].billingInfo.billingCycle}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <hr>
+            </div>
+
+
+        </div>
+
+        <div class="col-lg-5 policies">
+            <div class="row " >
+                <div class="rules" >
+                    <h4><b>Rules and Policies</b></h4>
+                    <ul id="rules">
+                        <li>{{space.rules}}</li>
+                        <li>{{space.policies}} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="container-fluid" style="margin-top: 2rem;">
+        <div class="container-fluid" style="margin: 0 15px 0 15px;" >
+            <h4><b>Animal Types</b></h4>
+            <div class="d-flex flex-row bd-highlight ">
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table" style="margin-right:9px"
+                        aria-hidden="true"></i>&nbsp;{{space.spaceCategories.pet.[0]}}
+                </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table" style="margin-right:9px"
+                        aria-hidden="true"></i>&nbsp;{{space.spaceCategories.pet.[1]}}
+                </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table" style="margin-right:9px"
+                        aria-hidden="true"></i>&nbsp;{{space.spaceCategories.pet.[1]}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" >
+        <div class="container-fluid" style="margin: 0 15px 0 15px;">
+            <h4><b>Amenities</b></h4>
+            <div class="d-flex flex-row flex-wrap bd-highlight mb-3">
+
+
+
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"> <i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[0]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[1]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[2]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"> <i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[0]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"> <i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[1]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[1]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[2]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"> <i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[0]}} </div>
+                {{!-- <div class="py-2 bd-highlight"> <i class="fa fa-table" style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[0]}} </div> --}}
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[1]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"><i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[2]}} </div>
+                <div style="color: gray;" class="py-2 my-2 bd-highlight"> <i class="fa fa-table"
+                        style="margin-right: 9px;" aria-hidden="true"></i>&nbsp;{{space.amenities.pet.[0]}} </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row hour-rules container-fluid" style="margin-top: 3.5rem;">
+        <div class="col-lg-4 col-12 openHours">
+                <div class="op1">
+                    <h4 ><b >Open Hours</b></h4>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Monday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.monday.isOpen}}
+                                    {{#dateFormatter space.openHours.monday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.monday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Tuesday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.tuesday.isOpen}}
+                                    {{#dateFormatter space.openHours.tuesday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.tuesday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Wednesday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.wednesday.isOpen}}
+                                    {{#dateFormatter space.openHours.wednesday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.wednesday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Thursday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.thursday.isOpen}}
+                                    {{#dateFormatter space.openHours.thursday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.thursday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Friday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.friday.isOpen}}
+                                    {{#dateFormatter space.openHours.friday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.friday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Saturday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.saturday.isOpen}}
+                                    {{#dateFormatter space.openHours.saturday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.saturday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Sunday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.sunday.isOpen}}
+                                    {{#dateFormatter space.openHours.sunday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.sunday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                </div>
+        </div>
+
+        <div class="col-lg-8 col-12 text-center">
+                <div class="row">
+                    <div class="rat-top">
+                        <div class="row">
+                            <div class="col-lg-6 stars"
+                                style="display: flex; justify-content:center; text-align:center">
+                                <div class="" style="display: flex;  text-align:center; flex-direction:column;">
+
+                                    <h4 > <b>Give us a rating </b></h4>
+
+                                    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
+                                            for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
+                                            for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
+                                            for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+                                            for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
+                                            for="1">☆</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ratingImageAlignment">
+                                    <img src="/images/index/map/rating.jpg" class="ratingImage">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        
+                            <div class="row justify-content-left d-flex">
+                                <div class="col-md-4 d-flex flex-column">
+                                    <div class="rating-box">
+                                        <h1 class="pt-4 avgRating" id="avgRating">4.0</h1>
+                                        <p class="">out of 5</p>
+                                    </div>
+                                    <div> <span class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-inactive mx-1"></span> </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="rating-bar0">
+                                        <table class="text-left mr-auto">
+                                            <tr>
+                                                <td class="rating-label">Excellent</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-5" id="star5Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Good</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-4" id="star4Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star4">1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Average</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-3" id="star3Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star3">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Poor</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-2" id="star2Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star2">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Terrible</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-1" id="star1Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star1">0</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="row container-fluid" style="margin-top:4rem; ">
+    <div class="container-fluid" >
+
+      
+
+
+        <div class="row hour-rules container-fluid" style="margin-top: 3.5rem;">
+            <div class="col-lg-4 col-12 openHours" style="margin-left: 0;padding-left:0;">
+                <div class="op1">
+                    <h4 style="margin-top:-1px"><b >Open Hours</b></h4>
+                    <div class="card card-right" style="margin-top: 20px;">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Monday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.monday.isOpen}}
+                                    {{#dateFormatter space.openHours.monday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.monday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Tuesday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.tuesday.isOpen}}
+                                    {{#dateFormatter space.openHours.tuesday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.tuesday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Wednesday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.wednesday.isOpen}}
+                                    {{#dateFormatter space.openHours.wednesday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.wednesday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Thursday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.thursday.isOpen}}
+                                    {{#dateFormatter space.openHours.thursday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.thursday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                </div>
+                <div class="op2">
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Friday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.friday.isOpen}}
+                                    {{#dateFormatter space.openHours.friday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.friday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Saturday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.saturday.isOpen}}
+                                    {{#dateFormatter space.openHours.saturday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.saturday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="card card-right">
+                        <div class="card-body hourPadding">
+                            <div class="row open-hours-row">
+                                <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar"
+                                        aria-hidden="true"></i>
+                                    Sunday
+                                </div>
+                                <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock"
+                                        aria-hidden="true"></i>
+                                    {{#if space.openHours.sunday.isOpen}}
+                                    {{#dateFormatter space.openHours.sunday.start}}{{/dateFormatter}} -
+                                    {{#dateFormatter space.openHours.sunday.end}}{{/dateFormatter}}
+                                    {{else}}
+                                    Closed
+                                    {{/if}}
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+                    <br>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-12 text-center">
+                <div class="row">
+                    <div class="rat-top">
+                        <div class="row">
+                            <div class="col-lg-6 stars"
+                                style="display: flex; justify-content:center; text-align:center">
+                                <div class="" style="display: flex;  text-align:center; flex-direction:column;">
+
+                                    <h4 style="margin-top: 0px;"> <b>Give us a rating </b></h4>
+
+                                    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label
+                                            for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label
+                                            for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
+                                            for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label
+                                            for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label
+                                            for="1">☆</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6" style="margin-top:0rem;">
+                                <div class="ratingImageAlignment">
+
+                                    <img src="/images/index/map/rating.jpg" class="ratingImage"
+                                        style="margin-left: -3rem;">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card1">
+                            <div class="row justify-content-left d-flex">
+                                <div class="col-md-4 d-flex flex-column">
+                                    <div class="rating-box">
+                                        <h1 class="pt-4 avgRating" id="avgRating">4.0</h1>
+                                        <p class="">out of 5</p>
+                                    </div>
+                                    <div> <span class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-active mx-1"></span> <span
+                                            class="fa fa-star star-inactive mx-1"></span> </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="rating-bar0">
+                                        <table class="text-left mr-auto">
+                                            <tr>
+                                                <td class="rating-label">Excellent</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-5" id="star5Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Good</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-4" id="star4Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star4">1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Average</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-3" id="star3Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star3">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Poor</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-2" id="star2Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star2">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="rating-label">Terrible</td>
+                                                <td class="rating-bar">
+                                                    <div class="bar-container">
+                                                        <div class="bar-1" id="star1Bar"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right" id="star1">0</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="testimonials">
+            <div class="row">
+                <div class="col-lg-8 mb-5 rev-left">
+                    <h4><b class="marginLeft">Reviews</b></h4>
+                    <div class="col-12 reviews2">
+                        <div class="card border-light">
+                            <div class="card-body">
+                                <footer class=""><cite title="Source Title">
+                                        <img src="/images/index/map/user.png" height="50px" width="50px"
+                                            class="profile-img">
+                                        User</cite></footer>
+                                <p class="card-text">Reviews are yet to be added</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 rev" style="flex-direction:column;padding-left:0;">
+                    <h4 class="write-review"><b>Write a review</b></h4>
+                    <img src="/images/index/map/review.svg" class="ml-auto mr-auto mt-5 mb-5 svgWidth">
+                    <div class="ui-input-container">
+                        <label class="ui-form-input-container">
+                            <textarea class="ui-form-input reviewInput" id="the-textarea" maxlength="300"
+                                rows="4"></textarea>
+                            <span class="form-input-label">Review</span>
+                        </label>
+                    </div>
+                    <div id="the-count">
+                        <span id="current">0</span>
+                        <span id="maximum">/ 300</span>
+                    </div>
+                    <button class="btn mb-5 ml-auto mr-auto"
+                        style="background-color: #d81b60; width:150px; color:white;">Submit
+                        review</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+-->
+
+
+
+{{#if_eq domain 'coliving'}}
+<script src="../../javascripts/map1.js"></script>
+{{/if_eq}}
+{{#if_eq domain 'coworking'}}
+<script src="../../javascripts/map1.js"></script>
+{{/if_eq}}
+{{#if_eq domain 'dance'}}
+<script src="../../javascripts/map.js"></script>
+{{/if_eq}}
+{{#if_eq domain 'gym'}}
+<script src="../../javascripts/map.js"></script>
+{{/if_eq}}
+<script src="../../javascripts/map.js"></script>
+
+<!-- This is jquery plugin -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<!-- This is the main flickity plugin -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script id="result-template" type="text/x-handlebars-template">
+  \{{#each slotArray}}
+        <label class="btn btn-default chk-btn" onchange="validate();">
+            <input type="checkbox" name="\{{this.publicID}}" class="chk" value="\{{this.price}}">
+            <div>\{{this.time.startTime}} \{{this.time.timePeriod}}</div>
+        </label>
+      \{{/each}}
+</script>
+
+
+
+<script>
+    $('.main-carousel').flickity({
+        // options
+        cellAlign: 'left',
+        contain: true
+    });
+
+</script>
+
+<script>
+
+    // Use the settings object to change the theme
+    mobiscroll.settings = {
+        lang: 'en',            // Specify language like: lang: 'pl' or omit setting to use default
+        theme: 'ios',          // Specify theme like: theme: 'ios' or omit setting to use default
+        themeVariant: 'light'  // More info about themeVariant: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-themeVariant
+    };
+
+    mobiscroll.calendar('#demo-one-week', {
+        display: 'inline',     // Specify display mode like: display: 'bottom' or omit setting to use default
+        weeks: 1,              // More info about weeks: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-weeks
+    });
+
+    mobiscroll.calendar('#demo-two-week', {
+        display: 'inline',     // Specify display mode like: display: 'bottom' or omit setting to use default
+        weeks: 2               // More info about weeks: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-weeks
+    });
+
+    mobiscroll.calendar('#demo-three-week', {
+        display: 'inline',     // Specify display mode like: display: 'bottom' or omit setting to use default
+        weeks: 3               // More info about weeks: https://docs.mobiscroll.com/4-10-6/javascript/calendar#opt-weeks
+    });
+</script>

@@ -1,0 +1,97 @@
+<link rel='stylesheet' href='/stylesheets/book.css' />
+
+<div class="top"></div>
+{{!-- <div class="top1"></div> --}}
+<div class="row back">
+    <div class="col-lg-10 animated slideInLeft">
+        <a href="/map/dance" style="color: black;"><i class="fa fa-arrow-left" aria-hidden="true"></i> Modify the
+            booking
+        </a>
+    </div>
+</div>
+<div class="row main">
+    <div class="col-lg-4 room-details animated slideInLeft">
+        <div class="row room-info ">
+            <div class="col-lg-8">
+                <strong>
+                    {{!-- <h5>{{space.title}}</h5> --}}
+                    <h5> <b class = "titleHeading"> HOLA Dance Studio </b></h5>
+
+                </strong>
+                {{!-- <p>{{space.description}}</p> --}}
+
+                <p> <b class="titleSubText"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, nostrum? Sunt obcaecati quos temporibus sapiente quidem, harum ullam porro totam? </b></p>
+
+            </div>
+            <div class="col-lg-4">
+                <img class="room-view" src="images/index/home.png" loading="lazy">
+            </div>
+        </div>
+        <br><br>
+        <div class="row booking-info ">
+            <div class="col-lg-8">
+                <p><i class="fa fa-calendar iconSize" aria-hidden="true"></i> {{date}}</p>
+            </div>
+            <div style="border-left: 1px black; height: 15px;"></div>
+            <div class="col-lg-4">
+                {{!-- <p>1 User</p> --}}
+            </div>
+        </div>
+        <hr>
+        <div class="row ">
+<!--            <div class="col-lg-10">-->
+<!--                <p style="padding: 0;"><i class="fa fa-bed" aria-hidden="true"></i> Classic 2x</p>-->
+<!--            </div>-->
+            <div class="button-group-pills text-center" data-toggle="buttons" id="slots">
+                {{#each slotArray}}
+                <label class="btn btn-default chk-btn">
+                    {{this.time.startTime}} {{this.time.timePeriod}}
+                </label>
+                {{/each}}
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row room-rate ">
+            <div class="col-lg-9 userSize"> <b>Price Per Slot</b> </div>
+            {{#each slotArray}}
+                <div class="col-lg-3"> ₹ {{this.price}}</div>
+            {{/each}}
+        </div>
+<!--        <div class="row room-rate ">-->
+<!--            <div class="col-lg-9"> <b>Discount</b> </div>-->
+<!--            <div class="col-lg-3"> -₹1234 </div>-->
+<!--        </div><br>-->
+        <hr><br>
+        <div class="row room-rate ">
+            <div class="col-lg-9">
+                <h4 class="amountFontSize">Payable Amount</h4>
+            </div>
+            <div class="col-lg-3">
+                <h4>₹ {{totalPrice}}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 user-info">
+        <div class="col-xl-auto user-details animated fadeInDownBig boxWidth">
+            <div class="row user-head">
+                <h3 style="margin-left: 15px; color: white;">Your Details</h3>
+            </div>
+            <div class="row user-1">
+                <div class="col-lg-5"><b class="userSize">Ks</b> <br> {{user.firstName}} {{user.lastName}}</div>
+                <div class="col-lg-5"><b class="userSize">Ks@gmail.com</b> <br> {{user.email}}</div>
+            </div>
+            <div class="row user-1">
+                <div class="col-lg-5"><b class="userSize">123456789</b> <br> {{user.phoneNo}}</div>
+                <div class="col-lg-5"></div>
+            </div>
+            <div class="row" style="justify-content: center; margin-top: 30px; margin-bottom: 25px;">
+                <button class="pay-btn btn" style="border-radius: 100px;">
+                    <h5 style="margin-bottom: 0; color: white;">Pay Now</h5>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+</div>

@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#signinClick").on("click",function(n){n.preventDefault(),window.location.href="/user/signin"})}),$(document).ready(function(){$(".tagBtn").on("click",function(n){n.preventDefault(),window.location.href="/filter"})});

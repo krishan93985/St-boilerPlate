@@ -1,0 +1,167 @@
+<link rel='stylesheet' href='/stylesheets/filters/filter.css' />
+<link rel='stylesheet' href='/stylesheets/filters/singleslider.css' />
+<script src='js/filters/filter.js'></script>
+
+<link rel='stylesheet' href='/stylesheets/filters/filter2.css' />
+
+{{!-- 
+<link rel='stylesheet' href='/stylesheets/filter.css'/>
+<link rel='stylesheet' href='/stylesheets/singleslider.css'/>
+<script src='/javascripts/filter/filter.js'></script> --}}
+
+
+<div id="filterMainWrapper" class="row">
+    <div class="col-sm-3 col-md-0 col-4">
+        {{!-- right here --}}
+        {{>filter/danceSidebar}}
+        {{#if_eq details.spaceType 'coliving'}}
+        {{>filter/co-livingSidebar}}
+        {{/if_eq}}
+        {{#if_eq details.spaceType 'coworking'}}
+        {{>filter/co-workingSidebar}}
+        {{/if_eq}}
+        {{#if_eq details.spaceType 'gym'}}
+        {{>filter/gymSidebar}}
+        {{/if_eq}}
+        {{#if_eq details.spaceType 'dance'}}
+        {{>filter/danceSidebar}}
+        {{/if_eq}}
+
+        {{#if_eq details.tag 'covid19'}}
+        {{>filter/covidSidebar}}
+        {{/if_eq}}
+    </div>
+    <div class="col-sm-9 col-6" id="pagecontent">
+        {{!-- inject top bar partial right here --}}
+        <div class="row leftPadding">
+            <div class="<!--col-sm-1 col-12--> buttonPadding"><button type="button" class="btn btn-primary"
+                    id="filterbtn" onclick="openNav()">Filter</button></div>
+            <div class="<!--col-sm-4 col-12--> flexCenter justify-content-start">
+                <h4 class="headingSize textPadding"><b style="margin-left:1.5rem"> Dance - Bengaluru
+                        {{!-- {{#if_eq details.spaceType 'coliving'}}
+                        Coliving - {{details.city}}
+                    {{/if_eq}}
+                    {{#if_eq details.spaceType 'coworking'}}
+                        Coworking - {{details.city}}
+                    {{/if_eq}}
+                    {{#if_eq details.spaceType 'gym'}}
+                        Gym - {{details.city}}
+                    {{/if_eq}}
+                    {{#if_eq details.spaceType 'dance'}}
+                        Dance - {{details.city}}
+                    {{/if_eq}}
+                    {{#if_eq details.tag 'covid19'}}
+                        Covid - {{details.city}}
+                    {{/if_eq}} --}}
+                    </b></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!--            <div class="col-sm-3 col-8 flexCenter">-->
+            <!--                <form class="form-inline">-->
+            <!--                    <input class="form-control mr-sm-2" type="search" placeholder="Search Space" aria-label="Search">-->
+            <!--                    {{!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}-->
+            <!--                </form>-->
+            <!--            </div>-->
+            <!--            <div class="col-sm-3 col-12">-->
+            <!--                <div class="row" id="translateLeft">-->
+            <!--                    <div id="sortByText" class="col-md-3 col-sm-12 sort"><b style="font-size:12px">SORT BY:</b></div>-->
+            <!--                    <div id="sortBy" class="col-md-8 col-sm-12 sort">-->
+            <!--                        <select class="custom-select select-state" id="exampleFormControlSelect1">-->
+            <!--                            <option selected value="Popularity">Popularity</option>-->
+            <!--                            <option value="Price: Low to High">Price: Low to High</option>-->
+            <!--                            <option value="Price: High to Low">Price: High to Low</option>-->
+            <!--                            <option value="Average Customer Review">Average Customer Review</option>-->
+            <!--                            <option value="Newest Arrival">Newest Arrival</option>-->
+            <!--                        </select>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row multiTags" style="padding: 0 1rem; margin-left:3rem;">
+            <a href="#">
+                <div class="tagBtn  button">
+                    <a class="tags">Virtual Class <span> &nbsp; x </span> </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="tagBtn button">
+                    <a class="tags">Training Room <span> &nbsp; x </span> </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="tagBtn button">
+                    <a class="tags">Fitness <span> &nbsp; x </span> </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="tagBtn button">
+                    <a class="tags">Co-Working <span> &nbsp; x </span> </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="tagBtn button">
+                    <a class="tags">Co-Living <span> &nbsp; x </span> </a>
+                </div>
+            </a>
+            <a href="#">
+                <div class="tagBtn button">
+                    <a class="tags">Co-Living <span> &nbsp; x </span> </a>
+                </div>
+            </a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <hr style=" color: lightgrey;">
+        {{!-- inject content partial --}}
+        {{> filter/filterContent}}
+
+        {{!-- {{#if_eq details.tag 'covid19'}}
+            {{>filter/covidContent}}
+        {{/if_eq}} --}}
+        {{!-- 
+        {{#if_not_eq details.tag 'covid19'}}
+            {{>filter/filterContent}}
+        {{/if_not_eq}} --}}
+
+        {{!-- {{#if details.space}}
+            {{else}}
+                <div class="container" style="text-align: center">
+                    <img src="/images/filter/noresult.png">
+                </div>
+        {{/if}} --}}
+
+    </div>
+</div>

@@ -1,0 +1,637 @@
+<link rel='stylesheet' href='/stylesheets/map/offersCard.css' />
+<link rel='stylesheet' href='/stylesheets/map/offersCarouselStyle.css' />
+<link rel='stylesheet' href='/stylesheets/map/map.css' />
+<link rel="stylesheet" href="/stylesheets/index/carousel/flickity/flickity.min.css">
+<script src="/stylesheets/index/carousel/flickity/flickity.pkgd.min.js"></script>
+<script src="/javascripts/mapReview.js" charset="utf-8"></script>
+<script src="/javascripts/map.js" charset="utf-8"></script>
+
+<link href="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.css" rel="stylesheet">
+<script type="text/javascript" src="https://www.bluemagnetinteractive.com/shotgun/date/fecha.js"></script>
+<script type="text/javascript" src="https://www.bluemagnetinteractive.com/shotgun/date/hotel-datepicker.min.js"></script>
+<!--<link rel="stylesheet" href="../../stylesheets/header1.css">-->
+
+<div style="overflow-x: hidden">
+<div>
+  <h1 id="tagheading">DANCE</h1>
+</div>
+{{!-- <div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-5">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+            {{!-- {{#if_eq domain 'coliving'}}
+              1 BHK
+            {{/if_eq}}
+            {{#if_eq domain 'coworking'}}
+              FrontV
+            {{/if_eq}}
+            {{#if_eq domain 'dance'}}
+              Studio View
+            {{/if_eq}}
+            {{#if_eq domain 'gym'}}
+              GymV1
+            {{/if_eq}} --}}
+            {{!-- Studio View --}}
+          {{!-- </a>
+        </div>
+      </nav>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div> --}} 
+
+
+<div class="carousel-wrapper-offers" style="margin-top: 4vh;">
+  <div class="carousel" data-flickity='{ "wrapAround": true,"pageDots": false }'>
+    <!-- {{!-- {{#each offers}}
+              <div class="carousel-cell">
+                {{> offersCard}}
+              </div>
+            {{/each}} --}} -->
+    <div class="carousel-cell">
+      <div class="offers-carouselCard">
+        <div class="offers-image">
+          <img src="/images/map/hola2.png" alt="screenshot">          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="row row0 carouselBottom" style=" margin-top: 8vh;">
+  <div class="col-lg-8 col-12 col-md-12">
+    <div class="row">
+      <div class="col-lg-9 col-9 col-md-9 head1" style="margin-left: 2vw;">
+        <h4><b>{{space.title}}</b></h4>
+         <h4><b class="marginLeft">HOLA Dance Studio</b></h4> 
+
+      </div>
+      <div class="reviews1" style="display: flex; width: 100vw; padding: 0 15px; flex-wrap: wrap; ">
+        <div class="desc1 col-md-6" style="padding:0;">
+          <i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+          {{space.address.streetDetails}}
+          1st Main Rd, 2nd Cross Rd, Sarvabhoumanagar, Sundar Ram Shetty Nagar, Bilekahalli
+        </div>
+        <div class="star" style="background-color: #d81b60; color: white; padding: 8px; border-radius: 4px; max-height: 40px;">
+          <label id="four" style="margin-bottom: 0 !important;"> <span class="avgRating">4.0</span> &nbsp </label><i class="fa fa-star" style="margin-left:0; margin-top: auto; margin-bottom: auto;"></i>
+        </div>
+        <div class="review">
+          {{!-- <p class="">(1 Review)</p> --}}
+        </div>
+      </div>
+    </div><br><br>
+    <div class="row">
+      <div class="col-lg-11 col-12 col-md-12 " style="margin-left: 2vw;margin-bottom:4vh;">
+        <h4><b class="marginLeft">Description</b></h4>
+        <p class="description">{{space.description}} </p>
+        <p class="description">Learn the latest grooves the most effortless way.Discover various styles like Urban, Hip-Hop, freestyle, popping, and a lot more. </p>
+      </div>
+    </div><br><br>
+    <div class="row">
+      <div class="col-lg-6 col-12 col-md-12 " style="margin-let: 2vw;margin-bottom:2vh">
+        <h4><b class="marginLeft">Dance Types</b></h4>
+        <div class="row">
+          <div class="col-md-5 mapgh col-12 col-lg-6">
+            <ul>
+              <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> Urban</li>
+              <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> Hip Hop</li>
+              <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> Freestyle</li>
+              <li><i class="fas fa-shoe-prints" aria-hidden="true"></i> Popping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-12 col-md-12">
+        <h4><b>Virtual Class</b></h4><br>
+        <h5 ><i class="far fa-clock" aria-hidden="true"></i>&nbsp; Timing:</h5><br>
+        <p class="description">&nbsp; lorem ipsum dolor sit amet</p>
+        <a href="" class="description"><button type="button" class="btn btn-light"> Link</button></a>
+      </div>
+    </div>
+
+    {{!-- <div class="row1" style="width: 100vw !important;">
+     <div class="col ">
+       <div class="row" style="display: flex; justify-content : center">
+       <a href="#dance">
+       <div class="tagBtn my-2 button dance">
+         <a class = "tags btr">Dance</a>
+          </div>
+           </a>
+           <a href="#fitness">
+       <div class="tagBtn my-2 button fitness">
+         <a class = "tags btr">Fitness</a>
+          </div>
+           </a>
+           <a href="#trainingRoom">
+       <div class="tagBtn my-2 button trainingRoom">
+         <a class = "tags btr">Training Room</a>
+          </div>
+           </a>
+           <a href="#co-working">
+       <div class="tagBtn my-2 button co-working" >
+         <a class = "tags btr">Co-Working</a>
+          </div>
+           </a>
+           <a href="#co-living">
+       <div class="tagBtn my-2 button co-living">
+         <a class = "tags btr">Co-Living</a>
+          </div>
+           </a>
+        <a href="#dance">
+       <div class="tagBtn my-2 button dance">
+         <a class = "tags btr">Dance</a>
+          </div>
+           </a>
+     </div>
+    </div> 
+    </div> --}}
+
+    <div class = "row1"  >
+<div class="carousel-wrapper-offers viewportHeight"  style="margin-top: 4vh;width:105%;margin-bottom:4vh;">
+  <div class="carousel" data-flickity='{ "wrapAround": true,"pageDots": false }'>
+    <!-- {{!-- {{#each offers}}
+              <div class="carousel-cell">
+                {{> offersCard}}
+              </div>
+            {{/each}} --}} -->
+
+    <div class="row" id="dance">
+      <div class="col-lg-6 col-md-6 col-12 ">
+    {{!-- <div class="carousel-cell">
+      <div class="offers-carouselCard"> --}}
+        <div class="offers-image">
+          <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg" alt="screenshot">          
+        </div>
+      {{!-- </div>
+    </div> --}}
+    </div>
+     <div class="col-lg-6 col-md-6 col-12" >
+    <div class="card cardHeight" style="height: 100%;">
+  <div class="card-body  carosuelPad">
+      <a href="#">
+       <div class="tagBtn my-4">
+         <a class = "tags">Dance</a>
+          </div>
+           </a>
+    {{!-- <h6 class="card-subtitle mb-2 text-muted">Description</h6> --}}
+       <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cumque assumenda. Architecto voluptates eius adipisci corporis ipsam est labore aspernatur minima similique, deserunt molestias sequi quidem vero inventore perferendis sunt!</p>
+  </div>
+</div>
+    </div>
+    </div>
+    <div class="row" id="fitness">
+      <div class="col-lg-6 col-md-6 col-12 ">
+    {{!-- <div class="carousel-cell"> --}}
+      {{!-- <div class="offers-carouselCard"> --}}
+        <div class="offers-image">
+          <img src="https://www.thehindu.com/news/cities/mumbai/psc657/article31674532.ece/ALTERNATES/FREE_960/26BMNSCICOVIDCARECENTRE"  alt="screenshot"  >          
+        </div>
+      {{!-- </div> --}}
+    {{!-- </div> --}}
+    </div>
+     <div class="col-lg-6 col-md-6 col-12 ">
+      <div class="card cardHeight" style="height: 100%;">
+  <div class="card-body carosuelPad">
+         <a href="#">
+       <div class="tagBtn my-4">
+         <a class = "tags">Fitness</a>
+          </div>
+           </a>
+    {{!-- <h6 class="card-subtitle mb-2 text-muted">Description</h6> --}}
+    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cumque assumenda. Architecto voluptates eius adipisci corporis ipsam est labore aspernatur minima similique, deserunt molestias sequi quidem vero inventore perferendis sunt!</p>
+    
+  </div>
+</div>
+    </div>
+    </div>
+    <div class="row" id="trainingRoom">
+      <div class="col-lg-6 col-md-6 col-12">
+    {{!-- <div class="carousel-cell"> --}}
+      {{!-- <div class="offers-carouselCard"> --}}
+        <div class="offers-image">
+          <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg" alt="screenshot">          
+        </div>
+      {{!-- </div> --}}
+    {{!-- </div> --}}
+    </div>
+     <div class="col-lg-6 col-md-6 col-12 ">
+     <div class="card cardHeight" style="height: 100%;">
+  <div class="card-body carosuelPad">
+     <a href="#">
+       <div class="tagBtn my-4">
+         <a class = "tags">Training Room</a>
+          </div>
+           </a>
+    {{!-- <h6 class="card-subtitle mb-2 text-muted">Description</h6> --}}
+        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cumque assumenda. Architecto voluptates eius adipisci corporis ipsam est labore aspernatur minima similique, deserunt molestias sequi quidem vero inventore perferendis sunt!</p>
+  
+  </div>
+</div>
+    </div>
+    </div>
+   <div class="row" id="co-working">
+      <div class="col-lg-6 col-md-6 col-12 ">
+    {{!-- <div class="carousel-cell"> --}}
+      {{!-- <div class="offers-carouselCard"> --}}
+        <div class="offers-image">
+          <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg" alt="screenshot">          
+        </div>
+      {{!-- </div> --}}
+    {{!-- </div> --}}
+    </div>
+     <div class="col-lg-6 col-md-6 col-12 ">
+     <div class="card cardHeight" style="height: 100%;">
+  <div class="card-body carosuelPad">
+       <a href="#">
+       <div class="tagBtn my-4">
+         <a class = "tags">Co-Working</a>
+          </div>
+           </a>
+    {{!-- <h6 class="card-subtitle mb-2 text-muted">Description</h6> --}}
+        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cumque assumenda. Architecto voluptates eius adipisci corporis ipsam est labore aspernatur minima similique, deserunt molestias sequi quidem vero inventore perferendis sunt!</p>
+     
+  </div>
+</div>
+    </div>
+    </div>
+    <div class="row" id="co-living">
+      <div class="col-lg-6 col-md-6 col-12 ">
+    {{!-- <div class="carousel-cell">
+      <div class="offers-carouselCard"> --}}
+        <div class="offers-image">
+          <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg" alt="screenshot">          
+        </div>
+      {{!-- </div>
+    </div> --}}
+    </div>
+     <div class="col-lg-6 col-md-6 col-12">
+     <div class="card cardHeight" style="height: 100%;">
+  <div class="card-body carosuelPad">
+         <a href="#">
+       <div class="tagBtn my-4">
+         <a class = "tags">Co-Living</a>
+          </div>
+           </a>
+    <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cumque assumenda. Architecto voluptates eius adipisci corporis ipsam est labore aspernatur minima similique, deserunt molestias sequi quidem vero inventore perferendis sunt!</p>
+   
+  </div>
+</div>
+    </div>
+    </div>
+
+  <div class="row" id="dance">
+      <div class="col-lg-6 col-md-6 col-12">
+    {{!-- <div class="carousel-cell">
+      <div class="offers-carouselCard"> --}}
+        <div class="offers-image">
+          <img src="https://images.financialexpress.com/2020/05/Nehru-Science-Centre.jpg" alt="screenshot">          
+        </div>
+      {{!-- </div>
+    </div> --}}
+    </div>
+     <div class="col-lg-6 col-md-6 col-12" >
+    <div class="card cardHeight" style="height: 100%;">
+  <div class="card-body  carosuelPad">
+      <a href="#">
+       <div class="tagBtn my-4">
+         <a class = "tags">Dance</a>
+          </div>
+           </a>
+    {{!-- <h6 class="card-subtitle mb-2 text-muted">Description</h6> --}}
+       <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, cumque assumenda. Architecto voluptates eius adipisci corporis ipsam est labore aspernatur minima similique, deserunt molestias sequi quidem vero inventore perferendis sunt!</p>
+  
+  </div>
+</div>
+    </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+    <div class="row1" style="display: flex;">
+      <div class="rules">
+        <h4><b class="marginLeft">Rules and Policies</b></h4>
+        <ul id="rules">
+          <li>CoVid Sanitization Guidelines need to be followed</li>
+          <li>Payment Needs to be done upfront</li>
+          <li>No Refund Post Payment, with the exception of certain cases </li>
+        </ul>
+      </div>
+      <br><br>
+      <div class="op1">
+        <h4 style="margin-top:-1px"><b class="marginLeft">Open Hours</b></h4>
+        <div class="card card-right" style="margin-top: 20px;">
+          <div class="card-body hourPadding" >
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Monday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> 8am-8pm
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="card card-right">
+          <div class="card-body hourPadding">
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Tuesday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> 8am-8pm
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="card card-right">
+          <div class="card-body hourPadding">
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Wednesday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> 8am-8pm
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="card card-right">
+          <div class="card-body hourPadding">
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Thursday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> 8am-8pm
+              </div>
+            </div>
+          </div>
+        </div><br>
+      </div>
+      <div class="op2" style="margin-top: 47px;">
+        <div class="card card-right">
+          <div class="card-body hourPadding">
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Friday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> 8am-8pm
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="card card-right">
+          <div class="card-body hourPadding">
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Saturday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> 8am-8pm
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="card card-right">
+          <div class="card-body hourPadding">
+            <div class="row open-hours-row">
+              <div class="col-6 open-hours openHoursPadding"><i class="fa fa-calendar" aria-hidden="true"></i> Sunday
+              </div>
+              <div class="col-6 open-hours openHoursPadding"><i class="fas fa-clock" aria-hidden="true"></i> Closed
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <br>
+      </div>
+    </div>
+    <div class="row" style="width:100vw;">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-center">
+        <div class="card1">
+          <div class="row justify-content-left d-flex">
+            <div class="col-md-4 d-flex flex-column">
+              <div class="rating-box">
+                <h1 class="pt-4 avgRating" id="avgRating">4.0</h1>
+                <p class="">out of 5</p>
+              </div>
+              <div> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span class="fa fa-star star-active mx-1"></span> <span
+                  class="fa fa-star star-inactive mx-1"></span> </div>
+            </div>
+            <div class="col-md-8">
+              <div class="rating-bar0">
+                <table class="text-left mr-auto">
+                  <tr>
+                    <td class="rating-label">Excellent</td>
+                    <td class="rating-bar">
+                      <div class="bar-container">
+                        <div class="bar-5" id="star5Bar"></div>
+                      </div>
+                    </td>
+                    <td class="text-right" id="star5">0</td>
+                  </tr>
+                  <tr>
+                    <td class="rating-label">Good</td>
+                    <td class="rating-bar">
+                      <div class="bar-container">
+                        <div class="bar-4" id="star4Bar"></div>
+                      </div>
+                    </td>
+                    <td class="text-right" id="star4">1</td>
+                  </tr>
+                  <tr>
+                    <td class="rating-label">Average</td>
+                    <td class="rating-bar">
+                      <div class="bar-container">
+                        <div class="bar-3" id="star3Bar"></div>
+                      </div>
+                    </td>
+                    <td class="text-right" id="star3">0</td>
+                  </tr>
+                  <tr>
+                    <td class="rating-label">Poor</td>
+                    <td class="rating-bar">
+                      <div class="bar-container">
+                        <div class="bar-2" id="star2Bar"></div>
+                      </div>
+                    </td>
+                    <td class="text-right" id="star2">0</td>
+                  </tr>
+                  <tr>
+                    <td class="rating-label">Terrible</td>
+                    <td class="rating-bar">
+                      <div class="bar-container">
+                        <div class="bar-1" id="star1Bar"></div>
+                      </div>
+                    </td>
+                    <td class="text-right" id="star1">0</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-3 ratingImageAlignment">
+        <img src="/images/map/rating.jpg"  class="ratingImage">
+      </div>
+      <div class="col-xl-2 col-lg-2 mb-5" style="display: flex;  align-conten:center; flex-direction:column;">
+
+        <h4 style="margin-top: 30px;"> <b class="marginLeft">Give us a rating </b></h4>
+
+        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label
+            for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-12" id="map-form">
+    <span style="font-size:20px;"><b class="marginLeft">Hourly Around &nbsp</b></span>
+    <b class="marginLeft"> <span style="color:#d81b60;font-size:25px"> ₹ 1200 {{space.priceStructure.hourly}}</span></b>
+    <form action="/user/book" method="post">
+
+      <div class="input-group" style="margin-top:10px">
+
+        {{#if_eq domain 'coliving'}}
+          <input id="input-id" autofill="no" autocomplete="off" name="datetimes" class="form-control" type="text" placeholder="Check In - Check Out" value="" title="Check In - Check Out" style="max-width:65%">
+        {{/if_eq}}
+        {{#if_eq domain 'coworking'}}
+          <input id="input-id" autofill="no" name="datetimes" class="form-control" type="text" placeholder="Check In-Check Out" value="" title="Check In - Check Out" style="max-width:65%">
+        {{/if_eq}}
+        {{#if_eq domain 'dance'}}
+<!--          <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">-->
+        {{/if_eq}}
+        {{#if_eq domain 'gym'}}
+          <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+        {{/if_eq}}
+        <input type="text" name="datepicker" class="input-field checkin form-control" id="danceDate" placeholder="Booking Date" style="max-width:65%">
+        <input type="text" min="1" max="10" placeholder="No. of People" class="form-control" id="second-input" style="max-width:35%">
+      </div>
+      {{!-- <br>
+            <input type="text" placeholder="No of rooms" class="form-control" id="down-input"><br>
+             --}}
+      <hr>
+      <b class="marginLeft">Slots available:</b><br>
+      <div class="button-group-pills text-center" data-toggle="buttons" id="slots" style="display: none;">
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-8 col-6">
+          <span><b style="font-size:20px;" class="marginLeft">Total Price:</b></span><br>
+          <span style="font-size:14px;">(Inclusive of all taxes)</span>
+        </div>
+        <div class="col-lg-4 col-6">
+          <span style="font-size:20px;color:#d81b60">
+            <b>₹ <span id="totalPrice">0</span></b>
+          </span>
+        </div>
+      </div><br>
+      <label for="publicID">
+        <input type="text" value="{{space.publicID}}" name="spacePublicID" id="publicID" style="display: none">
+      </label>
+      {{!-- {{#if login}}
+        <button type="submit" class="btn btn-primary btn-rounded" disabled id="book-form">Book Now</button><br>
+      {{else}}
+        <h6>Please <a href="/user/signin" style="color:#007bff; text-decoration: underline !important;">Login</a> to Book A Slot</h6>
+      {{/if}} --}}
+      <h6>Booking will be available soon. Stay tuned!</h6>
+    </form>
+  </div>
+</div>
+<br>
+{{!-- <div class="row">
+  <div class="col-lg-6">
+    <h4 id="nearby"><b class="marginLeft">What's nearby</b></h4><br>
+    <div id="outer-div">
+      <h4>Hola Dance Studio</h4>
+      <i class="fa fa-map-marker" style="color:#d81b40; margin-left: 0;" aria-hidden="true"></i> Sarvabhoumanagar<br><br>
+      <div id="inner-div" class="map-marker">
+        <div class="row">
+          <div class="col-lg-10">Skypool Fitness</div>
+          <div class="col-lg-2"><i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-10">IIM Bangalore</div>
+          <div class="col-lg-2"><i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-10">Fortis Hospital</div>
+          <div class="col-lg-2"><i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-10">Apollo Hospitals</div>
+          <div class="col-lg-2"><i class="fa fa-map-marker" style="color:#d81b60" aria-hidden="true"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 mapAlignment">
+    <div id="map">
+      <h4><b class="locationPaddingRight marginLeft">Location</b></h4><br>
+      <iframe width="500" height="350" style="border:0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1419.6491462179586!2d77.60116334690719!3d12.891467575724072!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15ef8ed0e807%3A0xa379aefb5fb50e34!2sSkypool%20Fitness!5e0!3m2!1sen!2sin!4v1592294498501!5m2!1sen!2sin" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <br>
+</div> --}}
+{{!-- <div class="testimonials">
+  <div class="row">
+    <div class="col-lg-8 mb-5">
+      <h4><b class="marginLeft">Reviews</b></h4>
+      <div class="col-12 reviews2">
+        <div class="card border-light">
+          <div class="card-body">
+            <footer class=""><cite title="Source Title">
+                <img src="/images/map/user.png" height="50px" width="50px" class="profile-img"> User</cite></footer>
+            <p class="card-text">Reviews are yet to be added</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3" style="display: flex; flex-direction:column; margin-left:1rem;">
+      <h4 class="write-review"><b>Write a review</b></h4>
+      <img src="/images/map/review.svg"  class="ml-auto mr-auto mt-5 mb-5 svgWidth">
+      <div class="ui-input-container">
+        <label class="ui-form-input-container">
+          <textarea class="ui-form-input reviewInput" id="the-textarea" maxlength="300" rows="4"></textarea>
+          <span class="form-input-label">Review</span>
+        </label>
+      </div>
+      <div id="the-count">
+        <span id="current">0</span>
+        <span id="maximum">/ 300</span>
+      </div>
+      <button class="btn mb-5 ml-auto mr-auto" style="background-color: #d81b60; width:150px; color:white;">Submit
+        review</button>
+    </div>
+  </div>
+</div> --}}
+</div>
+{{#if_eq domain 'coliving'}}
+  <script src="../../javascripts/map1.js"></script>
+{{/if_eq}}
+{{#if_eq domain 'coworking'}}
+  <script src="../../javascripts/map1.js"></script>
+{{/if_eq}}
+{{#if_eq domain 'dance'}}
+  <script src="../../javascripts/map.js"></script>
+{{/if_eq}}
+{{#if_eq domain 'gym'}}
+  <script src="../../javascripts/map.js"></script>
+{{/if_eq}}
+{{!-- <script src="../../javascripts/map.js"></script> --}}
+
+<script id="result-template" type="text/x-handlebars-template">
+  \{{#each slotArray}}
+        <label class="btn btn-default chk-btn" onchange="validate();">
+            <input type="checkbox" name="\{{this.publicID}}" class="chk" value="\{{this.price}}">
+            <div>\{{this.time.startTime}} \{{this.time.timePeriod}}</div>
+        </label>
+      \{{/each}}
+</script>
